@@ -1,7 +1,7 @@
 # SWE-Dev: Evaluating and Training Autonomous Feature-Driven Software Development
 
 [![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2410.16946)
-[![project](https://img.shields.io/badge/project-Page-blue)](https://SWE-Dev.github.io/)
+[![project](https://img.shields.io/badge/project-Page-blue)](https://justlittlewhite.github.io/SWE-Dev/)
 
 Code and data for paper "[SWE-Dev: Evaluating and Training Autonomous Feature-Driven Software Development](https://arxiv.org/abs/2410.16946)".
 
