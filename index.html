@@ -251,7 +251,7 @@
         <hr>
         <h2 class="title is-3">Benchmark&nbsp;&nbsp;Construction</h2>
         <br>
-        <img src="static\images\bench.png" class="center" style="width: 90%;"/>
+        <img src="static/image/data_construction.jpg" class="center" style="width: 90%;"/>
         <br>
         <div class="content has-text-justified">
           <br>  
@@ -287,342 +287,32 @@
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
-      <div class="column is-full_width">
+      <div class="column is-full-width">
         <hr>
         <h2 class="title is-3">Leaderboard</h2>
       </div>
     </div>
     <div class="content-box">
-      <ul class="tab">
-        <li><button id="tab-website" class="tablinks active" data-leaderboard="website">Website</button></li>
-        <li><button id="tab-game" class="tablinks" data-leaderboard="game">Game</button></li>
-      </ul>
-      
-      <div class="tabcontent" style="display: none;" id="leaderboard-game">
-        <table class="table scrollable">
-          <thead>
-            <tr>
-              <th><div class="sticky-header-content">Model</div></th>
-              <th><div class="sticky-header-content">% Basic</div></th>
-              <th><div class="sticky-header-content">% Advanced</div></th>
-              <th><div class="sticky-header-content">Codes</div></th>
-              <th><div class="sticky-header-content">Results</div></th>
-              <th><div class="sticky-header-content">Site</div></th>
-            </tr>
-          </thead>
-          <tbody>
-            
-            <tr>
-              <td>
-                <p class="model-type">
-                  🥇✅
-                  
-                  
-                  
-                  EvoMAC
-                </p>
-              </td>
-              <td><p class="number">77.54</p></td>
-              <td><p class="number">51.60</p></td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/game/EvoMAC">🔗</a>
-                  
-                  </p>
-              </td>
-              <td>
-                <p style="text-align: center;">
-                
-                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/game/EvoMAC">🔗</a>
-                
-                </p>
-            </td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
-                  
-                  </p>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <p class="model-type">
-                  🥈✅
-                  
-                  
-                  
-                  ChatDev
-                </p>
-              </td>
-              <td><p class="number">53.63</p></td>
-              <td><p class="number">32.26</p></td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/game/ChatDev">🔗</a>
-                  
-                  </p>
-              </td>
-              <td>
-                <p style="text-align: center;">
-                
-                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/game/ChatDev">🔗</a>
-                
-                </p>
-            </td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
-                  
-                  </p>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <p class="model-type">
-                  🥉
-                  
-                  
-                  
-                  GPT-4o-Mini
-                </p>
-              </td>
-              <td><p class="number">42.76</p></td>
-              <td><p class="number">30.10</p></td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/game/gpt-4o-mini">🔗</a>
-                  
-                  </p>
-              </td>
-              <td>
-                <p style="text-align: center;">
-                
-                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/game/gpt-4o-mini">🔗</a>
-                
-                </p>
-            </td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
-                  
-                  </p>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <p class="model-type">
-                  Claude-3.5-Sonnet
-                </p>
-              </td>
-              <td><p class="number">44.20</p></td>
-              <td><p class="number">18.29</p></td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/website/claude-3.5-sonnet">🔗</a>
-                  
-                  </p>
-              </td>
-              <td>
-                <p style="text-align: center;">
-                
-                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/website/claude-3.5-sonnet">🔗</a>
-                
-                </p>
-            </td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
-                  
-                  </p>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <p class="model-type">
-                  ✅
-                  Agentverse
-                </p>
-              </td>
-              <td><p class="number">37.67</p></td>
-              <td><p class="number">16.13</p></td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/game/agentverse">🔗</a>
-                  
-                  </p>
-              </td>
-              <td>
-                <p style="text-align: center;">
-                
-                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/game/agentverse">🔗</a>
-                
-                </p>
-            </td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
-                  
-                  </p>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <p class="model-type">
-                  ✅
-                  MapCoder
-                </p>
-              </td>
-              <td><p class="number">29.71</p></td>
-              <td><p class="number">7.52</p></td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/game/mapcoder">🔗</a>
-                  
-                  </p>
-              </td>
-              <td>
-                <p style="text-align: center;">
-                
-                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/game/mapcoder">🔗</a>
-                
-                </p>
-            </td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
-                  
-                  </p>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <p class="model-type">
-                  Gemini-1.5-Flash
-                </p>
-              </td>
-              <td><p class="number">21.74</p></td>
-              <td><p class="number">6.45</p></td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/game/gemini-1.5-flash">🔗</a>
-                  
-                  </p>
-              </td>
-              <td>
-                <p style="text-align: center;">
-                
-                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/game/gemini-1.5-flash">🔗</a>
-                
-                </p>
-            </td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
-                  
-                  </p>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <p class="model-type">
-                  ✅
-                  Autogen
-                </p>
-              </td>
-              <td><p class="number">17.39</p></td>
-              <td><p class="number">0.00</p></td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/game/autogen">🔗</a>
-                  
-                  </p>
-              </td>
-              <td>
-                <p style="text-align: center;">
-                
-                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/game/autogen">🔗</a>
-                
-                </p>
-            </td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
-                  
-                  </p>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <p class="model-type">
-                  ✅
-                  MetaGPT
-                </p>
-              </td>
-              <td><p class="number">16.67</p></td>
-              <td><p class="number">0.00</p></td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/game/metagpt">🔗</a>
-                  
-                  </p>
-              </td>
-              <td>
-                <p style="text-align: center;">
-                
-                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/game/metagpt">🔗</a>
-                
-                </p>
-            </td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
-                  
-                  </p>
-              </td>
-            </tr>
-            
-            
-            
-          </tbody>
-        </table>
-      </div>
-      
-      <div class="tabcontent" style="display: block;" id="leaderboard-website">
-        <table class="table scrollable">
-          <thead>
-            <tr>
-              <th><div class="sticky-header-content">Model</div></th>
-              <th><div class="sticky-header-content">% Basic</div></th>
-              <th><div class="sticky-header-content">% Advanced</div></th>
-              <th><div class="sticky-header-content">Codes</div></th>
-              <th><div class="sticky-header-content">Results</div></th>
-              <th><div class="sticky-header-content">Site</div></th>
+      <table class="table scrollable">
+        <thead>
+          <tr>
+            <th><div class="sticky-header-content">Model</div></th>
+            <th><div class="sticky-header-content">% Basic</div></th>
+            <th><div class="sticky-header-content">% Advanced</div></th>
+            <th><div class="sticky-header-content">Codes</div></th>
+            <th><div class="sticky-header-content">Results</div></th>
+            <th><div class="sticky-header-content">Site</div></th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 在这里添加表格的行数据 -->
+          <tr>
+            <td>Model 1</td>
+            <td>80%</td>
+            <td>75%</td>
+            <td>1234</td>
+            <td>Pass</td>
+            <td><a href="https://example.com">Website</a></td>
             </tr>
           </thead>
           <tbody>
