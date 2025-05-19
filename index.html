@@ -2,119 +2,201 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-  <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
-  <meta property="og:url" content="URL OF THE WEBSITE"/>
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/your_banner_image.png" />
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
-
-
-  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
-  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="description"
+        content="Where2comm: Communication-Efficient Collaborative Perception via Spatial Confidence Maps">
+  <meta name="keywords" content="3D detection, Collaborative perception, Communication-Efficient">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <title>AirDet</title> -->
 
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-  <title>SWE-Dev: Evaluating and Training Autonomous Feature-Driven Software Development</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script> -->
+  <link rel="icon" type="image/png" href="./static/images/cmic.jpeg"> 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-  rel="stylesheet">
+        rel="stylesheet">
 
-  <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/cmic.jpeg">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-  <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script src="static/js/bulma-carousel.min.js"></script>
-  <script src="static/js/bulma-slider.min.js"></script>
-  <script src="static/js/index.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
 </head>
 <body>
 
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <!-- <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://jaraxxus-me.github.io/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
 
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://ieeexplore.ieee.org/document/9561564">
+            ADTrack - ICRA 2021
+          </a>
+          <a class="navbar-item" href="https://openaccess.thecvf.com/content/ICCV2021/papers/Cao_HiFT_Hierarchical_Feature_Transformer_for_Aerial_Tracking_ICCV_2021_paper.pdf">
+            HiFT - ICCV 2021
+          </a>
+        </div>
+      </div>
+    </div> -->
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <!-- <h1 class="title is-1 publication-title"><img src="./static/images/drone.svg" width="120">AirDet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1> -->
+          <h1 class="title is-2 publication-title">SWE-Dev: Evaluating and Training Autonomous Feature-Driven Software Development</h1>
+          <h3 class="title is-5">Code and data for paper: <a href="https://arxiv.org/abs/2410.16946">SWE-Dev: Evaluating and Training Autonomous Feature-Driven Software Development</a></h2>
+          <!-- <div class="column is-full_width">
+            <h2 class="title is-4">Accepted by NeurIPS 2022 Spotlight</h2>
+          </div> -->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=XBbwb78AAAAJ&hl=zh-CN">Yaxin Du</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="">Yuzhu Cai</a><sup>1,2,3</sup>,</span>
+            <span class="author-block">
+              <a href="">Yifan Zhou</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Cheng Wang</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Yu Qian</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Xianghe Pang</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Qian Liu</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Yue Hu</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Siheng Chen</a><sup>1,3</sup>
+            </span>
+
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Cooperative Medianet Innovation Center, Shanghai Jiao Tong University,</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>2</sup>Beihang University, </span>
+            
+            <span class="author-block"><sup>3</sup>Shanghai AI Laboratory</span>
+          </div>
+
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
-            <div class="is-size-5 publication-authors">
-              <!-- Paper authors -->
-              <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
-                  </div>
-
-                  <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
-
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- Arxiv PDF link -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
-
-                    <!-- Supplementary PDF link -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
-
-                  <!-- Github link -->
-                  <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-                <!-- ArXiv abstract Link -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2410.16946"
+                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                    <i class="ai ai-arxiv"></i>
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2410.16946"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
                   </span>
                   <span>arXiv</span>
                 </a>
               </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://justlittlewhite.github.io/SWE-Dev"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/Jaraxxus-Me/AirDet"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                </a>
+              </span> -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/Jaraxxus-Me/AirDet_ROS"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-robot"></i>
+                  </span>
+                  <span>ROS</span>
+                </a>
+              </span> -->
+              <!-- <span class="link-block">
+                <a href="https://zhuanlan.zhihu.com/p/545249730"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-blog"></i>
+                  </span>
+                  <span>Blog</span>
+                </a>
+              </span> -->
             </div>
+
           </div>
         </div>
       </div>
@@ -122,191 +204,839 @@
   </div>
 </section>
 
-
-<!-- Teaser video-->
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
+
+      <img src="static\images\Intro.jpg" class="center"/>
+      <!-- <video id="teaser" autoplay muted loop height="100%">
+        <source src="./static/images/SUBT_video.mp4"
+                type="video/mp4">
+      </video> -->
+      <!-- <img class="rounded" src="./media/nice-slam/teaser.png" > -->
+      <br><br><br>
+      <!-- <h2 class="subtitle has-text-centered">
+        
+    </h2> -->
+    <!-- <h2 class="subtitle has-text-centered">
+      (The <span style="color:#000000;">black</span> / <span style="color:#ff0000;">red</span> lines are the ground truth / predicted camera trajectory)
+    </h2> -->
+    <p class="text-content">
+      Comparison between instruction-oriented and requirement-oriented evaluations. rSDE-Bench accurately reflects requirement fulfillment with the proposed accuracy score of 2/13, while the indrection evaluation misjudges with high scores (0.89), failing to detect missing functionality.
+    </p>
     </div>
   </div>
 </section>
-<!-- End teaser video -->
 
-<!-- Paper abstract -->
-<section class="section hero is-light">
+<section class="section">
   <div class="container is-max-desktop">
+    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
+          <p>rSDE-Bench is a requirement-oriented benchmark designed to evaluate the ability of models to handle software-level coding tasks. Unlike instruction-based approaches, rSDE-Bench uses detailed software requirements as input, specifying each functionality and constraint of the software. The benchmark includes automatic evaluation through unit tests, providing a more realistic assessment aligned with real-world software development practices.
+            Read more about rSDE-Bench in our <a href="https://arxiv.org/abs/2410.16946" ,="" target="_blank">paper</a>!</p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Method. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full_width">
+        <hr>
+        <h2 class="title is-3">Benchmark&nbsp;&nbsp;Construction</h2>
+        <br>
+        <img src="static\images\bench.png" class="center" style="width: 90%;"/>
+        <br>
+        <div class="content has-text-justified">
+          <br>  
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            rSDE-Bench involves diverse requirements, each paired with a test case. Specifically, rSDE-Bench provides <b>53 unique coding tasks</b> and <b>616 test cases</b>. 
+              It is divided into two typical real-world software types: <b>game and website</b>, and introduces two requirement difficulty levels, including <b>basic and advanced</b>, to reflect the
+              varying complexity of real-world software development tasks.
           </p>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- End paper abstract -->
+    <hr>
 
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
+    
+    <!-- Applications.-->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full_width">
+        <h2 class="title is-3">Features</h2>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
     </div>
-  </div>
-</div>
+    
+    <div class="content has-text-justified">
+        <br>  
+        <p>
+          <span style="color:#0ea7ff;"><b>Challenging and diverse software requirements.</b></span> rSDE-Bench features long-context software
+          requirements (averaging 507/1011 words for game and website tasks, respectively), unlike instructionoriented benchmarks that rely on brief prompts. These detailed requirements better reflect
+          real-world lengthy and complex software development challenges.
+        </p>
+        <p>
+          <span style="color:#0ea7ff;"><b>Requirement-aware precise and efficient evaluation.</b></span> rSDE-Bench employs detailed software
+          requirements and automated unit tests to precisely measure how well generated software meets
+          its objectives. Generated codes are evaluated based on pass rates from running specific test cases,
+          offering an accurate and efficient process. In contrast, instruction-oriented benchmarks rely on brief
+          prompts, which lack constraints and make evaluation less reliable, often requiring labor-intensive or
+          indirect evaluation.
+        </p>
+      </div>
+    </div>
 </div>
 </section>
-<!-- End image carousel -->
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full_width">
+        <hr>
+        <h2 class="title is-3">Leaderboard</h2>
+      </div>
+    </div>
+    <div class="content-box">
+      <ul class="tab">
+        <li><button id="tab-website" class="tablinks active" data-leaderboard="website">Website</button></li>
+        <li><button id="tab-game" class="tablinks" data-leaderboard="game">Game</button></li>
+      </ul>
+      
+      <div class="tabcontent" style="display: none;" id="leaderboard-game">
+        <table class="table scrollable">
+          <thead>
+            <tr>
+              <th><div class="sticky-header-content">Model</div></th>
+              <th><div class="sticky-header-content">% Basic</div></th>
+              <th><div class="sticky-header-content">% Advanced</div></th>
+              <th><div class="sticky-header-content">Codes</div></th>
+              <th><div class="sticky-header-content">Results</div></th>
+              <th><div class="sticky-header-content">Site</div></th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td>
+                <p class="model-type">
+                  🥇✅
+                  
+                  
+                  
+                  EvoMAC
+                </p>
+              </td>
+              <td><p class="number">77.54</p></td>
+              <td><p class="number">51.60</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/game/EvoMAC">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/game/EvoMAC">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
 
+            <tr>
+              <td>
+                <p class="model-type">
+                  🥈✅
+                  
+                  
+                  
+                  ChatDev
+                </p>
+              </td>
+              <td><p class="number">53.63</p></td>
+              <td><p class="number">32.26</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/game/ChatDev">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/game/ChatDev">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
 
+            <tr>
+              <td>
+                <p class="model-type">
+                  🥉
+                  
+                  
+                  
+                  GPT-4o-Mini
+                </p>
+              </td>
+              <td><p class="number">42.76</p></td>
+              <td><p class="number">30.10</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/game/gpt-4o-mini">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/game/gpt-4o-mini">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
 
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
+            <tr>
+              <td>
+                <p class="model-type">
+                  Claude-3.5-Sonnet
+                </p>
+              </td>
+              <td><p class="number">44.20</p></td>
+              <td><p class="number">18.29</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/website/claude-3.5-sonnet">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/website/claude-3.5-sonnet">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p class="model-type">
+                  ✅
+                  Agentverse
+                </p>
+              </td>
+              <td><p class="number">37.67</p></td>
+              <td><p class="number">16.13</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/game/agentverse">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/game/agentverse">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p class="model-type">
+                  ✅
+                  MapCoder
+                </p>
+              </td>
+              <td><p class="number">29.71</p></td>
+              <td><p class="number">7.52</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/game/mapcoder">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/game/mapcoder">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p class="model-type">
+                  Gemini-1.5-Flash
+                </p>
+              </td>
+              <td><p class="number">21.74</p></td>
+              <td><p class="number">6.45</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/game/gemini-1.5-flash">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/game/gemini-1.5-flash">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p class="model-type">
+                  ✅
+                  Autogen
+                </p>
+              </td>
+              <td><p class="number">17.39</p></td>
+              <td><p class="number">0.00</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/game/autogen">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/game/autogen">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p class="model-type">
+                  ✅
+                  MetaGPT
+                </p>
+              </td>
+              <td><p class="number">16.67</p></td>
+              <td><p class="number">0.00</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/game/metagpt">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/game/metagpt">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
+            
+            
+            
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="tabcontent" style="display: block;" id="leaderboard-website">
+        <table class="table scrollable">
+          <thead>
+            <tr>
+              <th><div class="sticky-header-content">Model</div></th>
+              <th><div class="sticky-header-content">% Basic</div></th>
+              <th><div class="sticky-header-content">% Advanced</div></th>
+              <th><div class="sticky-header-content">Codes</div></th>
+              <th><div class="sticky-header-content">Results</div></th>
+              <th><div class="sticky-header-content">Site</div></th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td>
+                <p class="model-type">
+                  🥇✅
+                  
+                  
+                  
+                  EvoMAC
+                </p>
+              </td>
+              <td><p class="number">89.38</p></td>
+              <td><p class="number">65.05</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/website/EvoMAC">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/website/EvoMAC">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p class="model-type">
+                  🥈
+                  
+                  
+                  
+                  GPT-4o-Mini
+                </p>
+              </td>
+              <td><p class="number">62.90</p></td>
+              <td><p class="number">44.40</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/website/gpt-4o-mini">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/website/gpt-4o-mini">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p class="model-type">
+                  🥉✅
+                  
+                  
+                  
+                  ChatDev
+                </p>
+              </td>
+              <td><p class="number">62.67</p></td>
+              <td><p class="number">43.45</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/website/ChatDev">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/website/ChatDev">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p class="model-type">
+                  Claude-3.5-Sonnet
+                </p>
+              </td>
+              <td><p class="number">58.90</p></td>
+              <td><p class="number">37.11</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/website/claude-3.5-sonnet">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/website/claude-3.5-sonnet">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p class="model-type">
+                  ✅
+                  MapCoder
+                </p>
+              </td>
+              <td><p class="number">34.70</p></td>
+              <td><p class="number">14.57</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/website/mapcoder">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/website/mapcoder">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p class="model-type">
+                  Gemini-1.5-Flash
+                </p>
+              </td>
+              <td><p class="number">29.79</p></td>
+              <td><p class="number">11.61</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/website/gemini-1.5-flash">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/website/gemini-1.5-flash">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p class="model-type">
+                  ✅
+                  Autogen
+                </p>
+              </td>
+              <td><p class="number">25.68</p></td>
+              <td><p class="number">5.40</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/website/autogen">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/website/autogen">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p class="model-type">
+                  ✅
+                  Agentverse
+                </p>
+              </td>
+              <td><p class="number">15.41</p></td>
+              <td><p class="number">0.00</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/website/agentverse">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/website/agentverse">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p class="model-type">
+                  ✅
+                  MetaGPT
+                </p>
+              </td>
+              <td><p class="number">15.41</p></td>
+              <td><p class="number">0.00</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/website/metagpt">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/website/metagpt">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
           
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
+            
+          </tbody>
+        </table>
       </div>
     </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full_width">
+        <div class="content has-text-justified">
+          <br>
+          <p>
+            rSDE-Bench involves two typical real-world software types: website and game, which can reflect
+            different coding capacities demanded in realistic software development. 
+            <br>
+            <span style="color:#0ea7ff;"><b>Website</b></span> emphasizes static and dynamic
+            content management, user interaction through forms and buttons, and ensuring page elements are
+            displayed and functional.
+            <br>
+            <span style="color:#0ea7ff;"><b>Game</b></span> requires handling
+            dynamic interactions, and real-time state changes, focusing on elements like
+            logic execution, initialization, and game state transitions. 
+            <br><br>
+
+            rSDE-Bench introduces two requirement difficulty levels, including <b>basic</b> and <b>advanced</b>.
+            <br>
+            - The <span style="color:#0ea7ff;"><b>% Basic</b></span> metric refers to the percentage of rSDE-Bench basic test cases
+            that were <i>passed</i> by the model.
+            <br>
+            - The <span style="color:#0ea7ff;"><b>% Advanced</b></span> metric refers to the percentage of rSDE-Bench advanced test cases
+            that were <i>passed</i> by the model.
+            <br>
+            - <span style="color:#0ea7ff;"><b>✅ Checked</b></span> indicates that the model system operates as a multi-agent system, while the absence of ✅ Checked denotes a single-agent system.
+          </p>
+        </div>
+    </div>
+    <!--/ Abstract. -->
   </div>
 </section>
-<!-- End youtube video -->
 
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
+<hr>
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{hu2024selfevolvingmultiagentcollaborationnetworks,
+      title={Self-Evolving Multi-Agent Collaboration Networks for Software Development}, 
+      author={Yue Hu and Yuzhu Cai and Yaxin Du and Xinyu Zhu and Xiangrui Liu and Zijie Yu and Yuchen Hou and Shuo Tang and Siheng Chen},
+      year={2024},
+      eprint={2410.16946},
+      archivePrefix={arXiv},
+      primaryClass={cs.SE},
+      url={https://arxiv.org/abs/2410.16946}, 
+}</code></pre>
   </div>
 </section>
-<!-- End video carousel -->
 
 
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
-
-
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
-    </div>
-</section>
-<!--End BibTex citation -->
-
-
-  <footer class="footer">
+<footer class="footer">
   <div class="container">
+    <div class="content has-text-centered">
+    </div>
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
-
           <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
+            This webpage template is from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>. 
+            We sincerely thank <a href="https://keunhong.com/">Keunhong Park</a> for developing and open-sourcing this template.
           </p>
-
+        </div>
+      </div>
+          </p>
         </div>
       </div>
     </div>
   </div>
 </footer>
 
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+</body>
+</html>
+<script>
+  function openLeaderboard(leaderboard) {
+    var tabcontent = document.getElementsByClassName("tabcontent");
+    for (var i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
 
-    <!-- End of Statcounter Code -->
+    var tablinks = document.getElementsByClassName("tablinks");
+    for (var i = 0; i < tablinks.length; i++) {
+      tablinks[i].classList.remove("active");
+    }
 
-  </body>
-  </html>
+    document.getElementById(`leaderboard-${leaderboard}`).style.display = "block";
+    document.querySelector(`[data-leaderboard="${leaderboard}"]`).classList.add("active");
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var tabs = document.querySelectorAll('.tablinks');
+    tabs.forEach(function(tab) {
+      tab.addEventListener('click', function(event) {
+        openLeaderboard(this.getAttribute('data-leaderboard'));
+      });
+    });
+
+    // Open the 'lite' leaderboard by default
+    openLeaderboard('website');
+  });
+</script>
