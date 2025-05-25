@@ -39,6 +39,172 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+       
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .switch-button {
+            padding: 10px 20px;
+            border: none;
+            background-color: transparent;
+            color: #333;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+            border-right: 1px solid #ccc;
+            flex: 1; /* 使按钮均匀分布 */
+
+        }
+        
+        .switch-button:last-child {
+            border-right: none; /* 移除最后一个按钮的右边框 */
+        }
+        
+        .switch-button.active {
+            background-color: #fff;
+            font-weight: bold;
+        }
+        
+        .switch-button:hover {
+            background-color: #d0d0d0;
+        }
+
+        .table-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow-x: auto;
+            margin: 0 auto;
+            width: fit-content; /* 确保表格居中并自适应内容 */
+            display: none; /* 默认隐藏所有表格 */
+
+        }
+        .table-container.active {
+            display: block; /* 显示激活的表格 */
+        }        
+        table {
+            width:auto;
+            border-collapse: collapse;
+            font-size: 18px;
+            margin: 0 auto;
+            table-layout: fixed;
+        }
+        
+        th, td {
+            padding: 10px 14px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+            box-sizing: border-box;
+        }
+        
+        /* 表头样式 */
+        thead tr:first-child th {
+            background-color: #abadad;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        /* 子表头样式 */
+        thead tr:nth-child(2) th {
+            background-color: #f1f3f4;
+            font-size: 18px;
+            color: #666;
+            font-weight: bold;
+        }
+        
+        /* 行号列 */
+        td:first-child {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        /* 奇数行背景 */
+        tbody tr:nth-child(odd) {
+            background-color: #fafafa;
+        }
+        
+        /* 模型名称样式 */
+        .model-name {
+            font-weight: bold;
+            color: #1a73e8;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: left;
+        }
+        
+        .model-name:hover {
+            text-decoration: underline;
+        }
+        
+        /* 大脑表情 */
+        .brain-emoji {
+            margin-left: 6px;
+            font-size: 14px;
+        }
+        
+        /* 公司名称 */
+        .company {
+            font-size: 11px;
+            color: #666;
+            font-weight: normal;
+            margin-top: 2px;
+            font-weight: bold;
+        }
+        
+        /* 日期颜色 */
+        .date {
+            color: #00a851;
+            font-weight: 500;
+        }
+        
+        /* 数据单元格 */
+        .data-cell {
+            font-weight: 500;
+        }
+        
+        /* 参数和上下文列 */
+        .params-context {
+            font-weight: 500;
+            color: #333;
+        }
+        
+        /* 模型信息列 */
+        .model-info {
+            text-align: left;
+            padding-left: 16px;
+        }
+        th:nth-child(2), td:nth-child(2) {
+            width: auto; /* 调整为您需要的宽度 */
+        }
+        /* Calls 列宽度设置 */
+        th:nth-child(5), td:nth-child(5), /* Easy Pass@1 */
+        th:nth-child(6), td:nth-child(6), /* Easy Calls */
+        th:nth-child(7), td:nth-child(7), /* Easy Prices */
+        th:nth-child(8), td:nth-child(8), /* Hard Pass@1 */
+        th:nth-child(9), td:nth-child(9), /* Hard Calls */
+        th:nth-child(10), td:nth-child(10) /* Hard Prices */ {
+            width: auto !important;/* 设置统一的宽度 */
+         }
+    </style>  
 </head>
 <body>
 
@@ -292,329 +458,667 @@
         <h2 class="title is-3">Leaderboard</h2>
       </div>
     </div>
-    <div class="content-box">
-      <table class="table scrollable">
-        <thead>
-          <tr>
-            <th><div class="sticky-header-content">Model</div></th>
-            <th><div class="sticky-header-content">% Basic</div></th>
-            <th><div class="sticky-header-content">% Advanced</div></th>
-            <th><div class="sticky-header-content">Codes</div></th>
-            <th><div class="sticky-header-content">Results</div></th>
-            <th><div class="sticky-header-content">Site</div></th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- 在这里添加表格的行数据 -->
-          <tr>
-            <td>Model 1</td>
-            <td>80%</td>
-            <td>75%</td>
-            <td>1234</td>
-            <td>Pass</td>
-            <td><a href="https://example.com">Website</a></td>
-            </tr>
-          </thead>
-          <tbody>
-            
-            <tr>
-              <td>
-                <p class="model-type">
-                  🥇✅
-                  
-                  
-                  
-                  EvoMAC
-                </p>
-              </td>
-              <td><p class="number">89.38</p></td>
-              <td><p class="number">65.05</p></td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/website/EvoMAC">🔗</a>
-                  
-                  </p>
-              </td>
-              <td>
-                <p style="text-align: center;">
-                
-                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/website/EvoMAC">🔗</a>
-                
-                </p>
-            </td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
-                  
-                  </p>
-              </td>
-            </tr>
+   <div class="button-container">
+            <button class="switch-button active" onclick="switchTable('table1')">Signle Agent</button>
+            <button class="switch-button" onclick="switchTable('table2')">Multi Agent System</button>
+    </div>
 
-            <tr>
-              <td>
-                <p class="model-type">
-                  🥈
-                  
-                  
-                  
-                  GPT-4o-Mini
-                </p>
-              </td>
-              <td><p class="number">62.90</p></td>
-              <td><p class="number">44.40</p></td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/website/gpt-4o-mini">🔗</a>
-                  
-                  </p>
-              </td>
-              <td>
-                <p style="text-align: center;">
-                
-                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/website/gpt-4o-mini">🔗</a>
-                
-                </p>
-            </td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
-                  
-                  </p>
-              </td>
-            </tr>
+    <div class="table-container active" id ="table1">
+        <table>
+            <thead>
+                <tr>
+                    <th rowspan="2">#</th>
+                    <th rowspan="2">Model</th>
+                    <th rowspan="2">Params</th>
+                    <th rowspan="2">Date</th>
+                    <th colspan="3">Easy (%)</th>
+                    <th colspan="3">Hard (%)</th>
+                </tr>
+                <tr>
+                    <th colspan="1">Pass@1</th>
+                    <th colspan="1">Calls</th>
+                    <th colspan="1">Prices($)</th>
+                    <th colspan="1">Pass@1</th>
+                    <th colspan="1">Calls</th>
+                    <th colspan="1">Prices($)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td class="model-info">
+                        <div class="model-name">
+                            Qwen3-8B
+                        </div>
+                        <div class="company">Qwen</div>
+                    </td>
+                    <td class="params-context">8B</td>
+                    <td class="date">2025-04-29</td>
+                    <td class="data-cell">34.04</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                    <td class="data-cell">12.09</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td class="model-info">
+                        <div class="model-name">
+                            Qwen3-8B<span class="brain-emoji">🧠</span>
+                        </div>
+                        <div class="company">Qwen</div>
+                    </td>
+                    <td class="params-context">8B</td>
+                    <td class="date">2025-04-29</td>
+                    <td class="data-cell">19.47</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                    <td class="data-cell">6.36</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td class="model-info">
+                        <div class="model-name">
+                            Qwen3-30B-A3B
+                        </div>
+                        <div class="company">Qwen</div>
+                    </td>
+                    <td class="params-context">30B</td>
+                    <td class="date">2025-04-29</td>
+                    <td class="data-cell">35.84</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                    <td class="data-cell">12.76</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td class="model-info">
+                        <div class="model-name">
+                            Qwen3-30B-A3B<span class="brain-emoji">🧠</span>
+                        </div>
+                        <div class="company">Qwen</div>
+                    </td>
+                    <td class="params-context">30B</td>
+                    <td class="date">2025-04-29</td>
+                    <td class="data-cell">23.63</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                    <td class="data-cell">8.30</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td class="model-info">
+                        <div class="model-name">
+                            o3<span class="brain-emoji">🧠</span>
+                        </div>
+                        <div class="company">OpenAI</div>
+                    </td>
+                    <td class="params-context">-</td>
+                    <td class="date">2025-04-16</td>
+                    <td class="data-cell">51.21</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                    <td class="data-cell">21.86</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td class="model-info">
+                        <div class="model-name">
+                            QwQ-32B-Preview <span class="brain-emoji">🧠</span>
+                        </div>
+                        <div class="company">Qwen</div>
+                    </td>
+                    <td class="params-context">32B</td>
+                    <td class="date">2025-03-06</td>
+                    <td class="data-cell">4.50</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                    <td class="data-cell">0.70</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td class="model-info">
+                        <div class="model-name">
+                            Claude-3.7-Sonnet
+                        </div>
+                        <div class="company">Anthropic</div>
+                    </td>
+                    <td class="params-context">-</td>
+                    <td class="date">2025-02-25</td>
+                    <td class="data-cell">53.09</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                    <td class="data-cell">19.74</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td class="model-info">
+                        <div class="model-name">
+                            Claude-3.7-Sonnet <span class="brain-emoji">🧠</span>
+                        </div>
+                        <div class="company">Anthropic</div>
+                    </td>
+                    <td class="params-context">-</td>
+                    <td class="date">2025-02-25</td>
+                    <td class="data-cell">49.47</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                    <td class="data-cell">22.51</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td class="model-info">
+                        <div class="model-name">
+                            grok-3-beta <span class="brain-emoji">🧠</span>
+                        </div>
+                        <div class="company">xAI</div>
+                    </td>
+                    <td class="params-context">-</td>
+                    <td class="date">2025-02-19</td>
+                    <td class="data-cell">53.63</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                    <td class="data-cell">18.97</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td class="model-info">
+                        <div class="model-name">
+                            Deepseek-R1-distill-Qwen2.5-7B  <span class="brain-emoji">🧠</span>
+                        </div>
+                        <div class="company">deepseek-ai</div>
+                    </td>
+                    <td class="params-context">7B</td>
+                    <td class="date">2025-01-20</td>
+                    <td class="data-cell">6.30</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                    <td class="data-cell">1.29</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td class="model-info">
+                        <div class="model-name">
+                            Deepseek-R1-distill-Qwen2.5-32B  <span class="brain-emoji">🧠</span>
+                        </div>
+                        <div class="company">deepseek-ai</div>
+                    </td>
+                    <td class="params-context">32B</td>
+                    <td class="date">2025-01-20</td>
+                    <td class="data-cell">24.25</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                    <td class="data-cell">9.79</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td class="model-info">
+                        <div class="model-name">
+                            DeepSeek-R1-distill-Llama-70B  <span class="brain-emoji">🧠</span>
+                        </div>
+                        <div class="company">deepseek-ai</div>
+                    </td>
+                    <td class="params-context">70B</td>
+                    <td class="date">2025-01-20</td>
+                    <td class="data-cell">32.73</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                    <td class="data-cell">8.19</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td class="model-info">
+                        <div class="model-name">
+                            Deepseek-R1  <span class="brain-emoji">🧠</span>
+                        </div>
+                        <div class="company">deepseek-ai</div>
+                    </td>
+                    <td class="params-context">-</td>
+                    <td class="date">2025-01-20</td>
+                    <td class="data-cell">28.55</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                    <td class="data-cell">12.84</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td class="model-info">
+                        <div class="model-name">
+                            Deepseek-V3 
+                        </div>
+                        <div class="company">deepseek-ai</div>
+                    </td>
+                    <td class="params-context">-</td>
+                    <td class="date">2024-12-26</td>
+                    <td class="data-cell">41.95</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                    <td class="data-cell">16.22</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                </tr> 
+                <tr>
+                    <td>15</td>
+                    <td class="model-info">
+                        <div class="model-name">
+                            Phi-4
+                        </div>
+                        <div class="company">microsoft</div>
+                    </td>
+                    <td class="params-context">14B</td>
+                    <td class="date">2024-12-12</td>
+                    <td class="data-cell">21.99</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                    <td class="data-cell">5.57</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                </tr> 
 
-            <tr>
-              <td>
-                <p class="model-type">
-                  🥉✅
-                  
-                  
-                  
-                  ChatDev
-                </p>
-              </td>
-              <td><p class="number">62.67</p></td>
-              <td><p class="number">43.45</p></td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/website/ChatDev">🔗</a>
-                  
-                  </p>
-              </td>
-              <td>
-                <p style="text-align: center;">
-                
-                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/website/ChatDev">🔗</a>
-                
-                </p>
-            </td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
-                  
-                  </p>
-              </td>
-            </tr>
+                <tr>
+                    <td>16</td>
+                    <td class="model-info">
+                        <div class="model-name">
+                            Llama3.3-70B-Instrcut
+                        </div>
+                        <div class="company">microsoft</div>
+                    </td>
+                    <td class="params-context">70B</td>
+                    <td class="date">2024-12-06</td>
+                    <td class="data-cell">33.84</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                    <td class="data-cell">12.85</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                </tr>   
+                <tr>
+                    <td>17</td>
+                    <td class="model-info">
+                        <div class="model-name">
+                            o1
+                        </div>
+                        <div class="company">OpenAI</div>
+                    </td>
+                    <td class="params-context">-</td>
+                    <td class="date">2024-12-05</td>
+                    <td class="data-cell">36.36</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                    <td class="data-cell">11.09</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                </tr>    
+                <tr>
+                    <td>18</td>
+                    <td class="model-info">
+                        <div class="model-name">
+                            Qwen2.5-1.5B-Instruct
+                        </div>
+                        <div class="company">Qwen</div>
+                    </td>
+                    <td class="params-context">1.5B</td>
+                    <td class="date">2024-09-19</td>
+                    <td class="data-cell">8.05</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                    <td class="data-cell">1.23</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                </tr>     
+                <tr>
+                    <td>19</td>
+                    <td class="model-info">
+                        <div class="model-name">
+                            Qwen2.5-Coder-14B-Instruct
+                        </div>
+                        <div class="company">Qwen</div>
+                    </td>
+                    <td class="params-context">14B</td>
+                    <td class="date">2024-11-12</td>
+                    <td class="data-cell">39.51</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                    <td class="data-cell">14.82</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                </tr>       
+                <tr>
+                    <td>20</td>
+                    <td class="model-info">
+                        <div class="model-name">
+                            Qwen2.5-3B-Instruct
+                        </div>
+                        <div class="company">Qwen</div>
+                    </td>
+                    <td class="params-context">3B</td>
+                    <td class="date">2024-09-19</td>
+                    <td class="data-cell">15.93</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                    <td class="data-cell">5.27</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                </tr>  
+                <tr>
+                    <td>21</td>
+                    <td class="model-info">
+                        <div class="model-name">
+                            Qwen2.5-7B-Instruct
+                        </div>
+                        <div class="company">Qwen</div>
+                    </td>
+                    <td class="params-context">7B</td>
+                    <td class="date">2024-09-19</td>
+                    <td class="data-cell">25.74</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                    <td class="data-cell">6.68</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                </tr>  
+                <tr>
+                    <td>22</td>
+                    <td class="model-info">
+                        <div class="model-name">
+                            Qwen2.5-14B-Instruct
+                        </div>
+                        <div class="company">Qwen</div>
+                    </td>
+                    <td class="params-context">14B</td>
+                    <td class="date">2024-09-19</td>
+                    <td class="data-cell">38.08</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                    <td class="data-cell">13.16</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                </tr> 
+                <tr>
+                    <td>23</td>
+                    <td class="model-info">
+                        <div class="model-name">
+                            Qwen2.5-32B-Instruct
+                        </div>
+                        <div class="company">Qwen</div>
+                    </td>
+                    <td class="params-context">32B</td>
+                    <td class="date">2024-09-19</td>
+                    <td class="data-cell">43.64</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                    <td class="data-cell">10.15</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                </tr>  
+                <tr>
+                    <td>24</td>
+                    <td class="model-info">
+                        <div class="model-name">
+                            Qwen2.5-72B-Instruct
+                        </div>
+                        <div class="company">Qwen</div>
+                    </td>
+                    <td class="params-context">72B</td>
+                    <td class="date">2024-09-19</td>
+                    <td class="data-cell">49.01</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                    <td class="data-cell">10.62</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                </tr>    
+                <tr>
+                    <td>25</td>
+                    <td class="model-info">
+                        <div class="model-name">
+                            Llama-3.1-8B-Instruct
+                        </div>
+                        <div class="company">meta-llama</div>
+                    </td>
+                    <td class="params-context">8B</td>
+                    <td class="date">2024-07-23</td>
+                    <td class="data-cell">26.43</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                    <td class="data-cell">7.94</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                </tr>   
+                <tr>
+                    <td>26</td>
+                    <td class="model-info">
+                        <div class="model-name">
+                            GPT-4o-mini
+                        </div>
+                        <div class="company">OpenAI</div>
+                    </td>
+                    <td class="params-context">-</td>
+                    <td class="date">2024-07-18</td>
+                    <td class="data-cell">34.47</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                    <td class="data-cell">11.09</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                </tr>   
+                <tr>
+                    <td>27</td>
+                    <td class="model-info">
+                        <div class="model-name">
+                            DeepSeek-Coder-V2-Lite-Instruct
+                        </div>
+                        <div class="company">deepseek-a</div>
+                    </td>
+                    <td class="params-context">-</td>
+                    <td class="date">2024-06-17</td>
+                    <td class="data-cell">21.53</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                    <td class="data-cell">8.19</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                </tr> 
+                <tr>
+                    <td>28</td>
+                    <td class="model-info">
+                        <div class="model-name">
+                            GPT-4o
+                        </div>
+                        <div class="company">OpenAI</div>
+                    </td>
+                    <td class="params-context">-</td>
+                    <td class="date">2024-05-13</td>
+                    <td class="data-cell">54.37</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
+                    <td class="data-cell">19.13</td>
+                    <td class="data-cell">1</td>
+                    <td class="data-cell">-</td>
 
-            <tr>
-              <td>
-                <p class="model-type">
-                  Claude-3.5-Sonnet
-                </p>
-              </td>
-              <td><p class="number">58.90</p></td>
-              <td><p class="number">37.11</p></td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/website/claude-3.5-sonnet">🔗</a>
-                  
-                  </p>
-              </td>
-              <td>
-                <p style="text-align: center;">
-                
-                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/website/claude-3.5-sonnet">🔗</a>
-                
-                </p>
-            </td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
-                  
-                  </p>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <p class="model-type">
-                  ✅
-                  MapCoder
-                </p>
-              </td>
-              <td><p class="number">34.70</p></td>
-              <td><p class="number">14.57</p></td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/website/mapcoder">🔗</a>
-                  
-                  </p>
-              </td>
-              <td>
-                <p style="text-align: center;">
-                
-                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/website/mapcoder">🔗</a>
-                
-                </p>
-            </td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
-                  
-                  </p>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <p class="model-type">
-                  Gemini-1.5-Flash
-                </p>
-              </td>
-              <td><p class="number">29.79</p></td>
-              <td><p class="number">11.61</p></td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/website/gemini-1.5-flash">🔗</a>
-                  
-                  </p>
-              </td>
-              <td>
-                <p style="text-align: center;">
-                
-                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/website/gemini-1.5-flash">🔗</a>
-                
-                </p>
-            </td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
-                  
-                  </p>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <p class="model-type">
-                  ✅
-                  Autogen
-                </p>
-              </td>
-              <td><p class="number">25.68</p></td>
-              <td><p class="number">5.40</p></td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/website/autogen">🔗</a>
-                  
-                  </p>
-              </td>
-              <td>
-                <p style="text-align: center;">
-                
-                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/website/autogen">🔗</a>
-                
-                </p>
-            </td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
-                  
-                  </p>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <p class="model-type">
-                  ✅
-                  Agentverse
-                </p>
-              </td>
-              <td><p class="number">15.41</p></td>
-              <td><p class="number">0.00</p></td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/website/agentverse">🔗</a>
-                  
-                  </p>
-              </td>
-              <td>
-                <p style="text-align: center;">
-                
-                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/website/agentverse">🔗</a>
-                
-                </p>
-            </td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
-                  
-                  </p>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <p class="model-type">
-                  ✅
-                  MetaGPT
-                </p>
-              </td>
-              <td><p class="number">15.41</p></td>
-              <td><p class="number">0.00</p></td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/website/metagpt">🔗</a>
-                  
-                  </p>
-              </td>
-              <td>
-                <p style="text-align: center;">
-                
-                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/website/metagpt">🔗</a>
-                
-                </p>
-            </td>
-              <td>
-                  <p style="text-align: center;">
-                  
-                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
-                  
-                  </p>
-              </td>
-            </tr>
-          
-            
-          </tbody>
+                </tr>
+            </tbody>
         </table>
+    </div>
+
+    <div class="table-container" id="table2">
+        <table>
+            <thead>
+                <tr>
+                    <th rowspan="2">#</th>
+                    <th rowspan="2">Method</th>
+                    <th rowspan="2">Date</th>
+                    <th colspan="3">Easy (%)</th>
+                    <th colspan="3">Hard (%)</th>
+                </tr>
+                <tr>
+                    <th>Pass@1</th>
+                    <th>Calls</th>
+                    <th>Prices($)</th>
+                    <th>Pass@1</th>
+                    <th>Calls</th>
+                    <th>Prices($)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td class="model-info">
+                        <div class="model-name">Reflexion</div>
+                    </td>
+                    <td class="date">2023-10-10</td>
+                    <td class="data-cell">39.77</td>
+                    <td class="data-cell">2.12</td>
+                    <td class="data-cell">0.83</td>
+                    <td class="data-cell">13.32</td>
+                    <td class="data-cell">2.18</td>
+                    <td class="data-cell">1.35</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td class="model-info">
+                        <div class="model-name">Self Refine</div>
+                    </td>
+                    <td class="date">2023-05-26</td>
+                    <td class="data-cell">40.02</td>
+                    <td class="data-cell">5.00</td>
+                    <td class="data-cell">5.78</td>
+                    <td class="data-cell">20.03</td>
+                    <td class="data-cell">5.00</td>
+                    <td class="data-cell">5.8</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td class="model-info">
+                        <div class="model-name">Self Consistency</div>
+                    </td>
+                    <td class="date">2023-03-08</td>
+                    <td class="data-cell">37.62</td>
+                    <td class="data-cell">6.00</td>
+                    <td class="data-cell">4.30</td>
+                    <td class="data-cell">18.55</td>
+                    <td class="data-cell">6.00</td>
+                    <td class="data-cell">7.08</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td class="model-info">
+                        <div class="model-name">LLM Debate</div>
+                    </td>
+                    <td class="date">2023-05-24</td>
+                    <td class="data-cell">38.48 </td>
+                    <td class="data-cell">7.00</td>
+                    <td class="data-cell">5.95</td>
+                    <td class="data-cell">14.56</td>
+                    <td class="data-cell">7.00</td>
+                    <td class="data-cell">9.35</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td class="model-info">
+                        <div class="model-name">MAD</div>
+                    </td>
+                    <td class="date">2024-10-9</td>
+                    <td class="data-cell">31.50</td>
+                    <td class="data-cell">7.00</td>
+                    <td class="data-cell">2.48</td>
+                    <td class="data-cell">15.31</td>
+                    <td class="data-cell">7.00</td>
+                    <td class="data-cell">3.40</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td class="model-info">
+                        <div class="model-name">Agentverse</div>
+                    </td>
+                    <td class="date">2023-10-23</td>
+                    <td class="data-cell">38.67</td>
+                    <td class="data-cell">4.52</td>
+                    <td class="data-cell">1.40 </td>
+                    <td class="data-cell">13.42</td>
+                    <td class="data-cell">4.83 </td>
+                    <td class="data-cell">2.90</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td class="model-info">
+                        <div class="model-name">EvoMAC</div>
+                    </td>
+                    <td class="date">2024-10-22</td>
+                    <td class="data-cell">34.59</td>
+                    <td class="data-cell">7.98</td>
+                    <td class="data-cell">3.20</td>
+                    <td class="data-cell">13.60</td>
+                    <td class="data-cell">8.30</td>
+                    <td class="data-cell">4.65</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td class="model-info">
+                        <div class="model-name">MetaGPT</div>
+                    </td>
+                    <td class="date">2024-12-01</td>
+                    <td class="data-cell">29.56</td>
+                    <td class="data-cell">9.69</td>
+                    <td class="data-cell">2.20</td>
+                    <td class="data-cell">9.25</td>
+                    <td class="data-cell">10.37</td>
+                    <td class="data-cell">4.95</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td class="model-info">
+                        <div class="model-name">MapCoder</div>
+                    </td>
+                    <td class="date">2024-05-19</td>
+                    <td class="data-cell">24.55</td>
+                    <td class="data-cell">21.01</td>
+                    <td class="data-cell">6.05</td>
+                    <td class="data-cell">5.87</td>
+                    <td class="data-cell">23.41</td>
+                    <td class="data-cell">10.55</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td class="model-info">
+                        <div class="model-name">ChatDev</div>
+                    </td>
+                    <td class="date">2024-06-05</td>
+                    <td class="data-cell">35.13</td>
+                    <td class="data-cell">26.61</td>
+                    <td class="data-cell">3.53</td>
+                    <td class="data-cell">11.70</td>
+                    <td class="data-cell">30.87</td>
+                    <td class="data-cell">6.10</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
       </div>
     </div>
     <div class="columns is-centered has-text-centered">
@@ -686,21 +1190,19 @@
 </body>
 </html>
 <script>
-  function openLeaderboard(leaderboard) {
-    var tabcontent = document.getElementsByClassName("tabcontent");
-    for (var i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
+    function switchTable(tableId) {
+        // 移除所有按钮的active类并添加新active按钮
+        document.querySelectorAll('.switch-button').forEach(button => {
+            button.classList.remove('active');
+        });
+        document.querySelector(`.switch-button[onclick="switchTable('${tableId}')"]`).classList.add('active');
+        
+        // 隐藏所有表格并显示选中的表格
+        document.querySelectorAll('.table-container').forEach(container => {
+            container.classList.remove('active');
+        });
+        document.getElementById(tableId).classList.add('active');
     }
-
-    var tablinks = document.getElementsByClassName("tablinks");
-    for (var i = 0; i < tablinks.length; i++) {
-      tablinks[i].classList.remove("active");
-    }
-
-    document.getElementById(`leaderboard-${leaderboard}`).style.display = "block";
-    document.querySelector(`[data-leaderboard="${leaderboard}"]`).classList.add("active");
-  }
-
   document.addEventListener('DOMContentLoaded', function() {
     var tabs = document.querySelectorAll('.tablinks');
     tabs.forEach(function(tab) {
