@@ -323,6 +323,7 @@
 <section class="section">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full_width">
+        <br/>
         <h2 class="title is-3">Features</h2>
         <div class="hero-body">
         <img src="static/image/data_construction.jpg" class="center" style="max-width: 50%; height: auto;"/>
@@ -330,7 +331,7 @@
       </div>
     </div>
     
-    <div class="feature" style="max-width: 50%;margin: auto">
+    <div class="feature" style="max-width: 60%;margin: auto">
         <div class="feature-title">
             <span class="feature-number">1</span>
             Realistic scale and complexity
@@ -340,7 +341,7 @@
         </div>
     </div>
     
-    <div class="feature" style="max-width: 50%;">
+    <div class="feature" style="max-width: 60%;margin: auto">
         <div class="feature-title">
             <span class="feature-number">2</span>
             Robust and grounded evaluation
@@ -350,7 +351,7 @@
         </div>
     </div>
     
-    <div class="feature" style="max-width: 50%;">
+    <div class="feature" style="max-width: 60%;margin: auto">
         <div class="feature-title">
             <span class="feature-number">3</span>
             Verifiable training set with executable test suites
@@ -378,6 +379,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
+        <br/>
         <h2 class="title is-3">Leaderboard</h2>
       </div>
     </div>
@@ -998,19 +1000,28 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full_width">
+        <br/>
         <h2 class="title is-3">Training Support</h2>
       </div>
     </div>
 
     <div class="columns is-centered has-text-centered">
-    <div class="column is-full-width">
-        <h2 class="title is-4">Single Agent Training</h2>
-        <p style="text-align: right;">We evaluate SWE-Dev's support for different training methods, including <strong style="font-size: 1.2em;">SFT</strong>, <strong style="font-size: 1.2em;">RL</strong>.</p>
-        <h3><strong style="font-size: 1.2em;">SFT</strong></h3>
-        <img src="static/image/single_sft.png">
-        <h3><strong style="font-size: 1.2em;">RL</strong></h3>
-        <img src="static/image/single_rl.png">
-    </div>
+        <div class="column is-full-width">
+            <h2 class="title is-4">Single Agent Training</h2>
+            <p style="text-align: right;">We evaluate SWE-Dev's support for different training methods, including <strong style="font-size: 1.2em;">SFT</strong>, <strong style="font-size: 1.2em;">RL</strong>.</p>
+            
+            <!-- 使用 Flexbox 布局让图片并列 -->
+            <div style="display: flex; justify-content: space-around; align-items: center;">
+                <div>
+                    <h3><strong style="font-size: 1.2em;">SFT</strong></h3>
+                    <img src="static/image/single_sft.png" style="max-width: 50%; height: auto;">
+                </div>
+                <div>
+                    <h3><strong style="font-size: 1.2em;">RL</strong></h3>
+                    <img src="static/image/single_rl.png" style="max-width: 50%; height: auto;">
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="columns is-centered has-text-centered">
