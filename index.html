@@ -57,7 +57,23 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
+        .two_picture_container {
+        display: flex;
+        gap: 20px; /* 图片之间的间距 */
+        justify-content: center; /* 水平居中 */
+        }
+        .two_picture_image-box {
+        text-align: center; /* 标题和图片居中对齐 */
+        }
+        .two_picture_image-box img {
+        width: 200px; /* 图片宽度，可根据需要调整 */
+        height: auto;
+        display: block; /* 确保图片为块级元素 */
+        }
+        .two_picture_image-box h3 {
+        margin: 0 0 10px 0; /* 标题底部间距 */
+        font-size: 18px; /* 标题字体大小 */
+        }
         .switch-button {
             padding: 10px 20px;
             border: none;
@@ -231,39 +247,47 @@
 
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=XBbwb78AAAAJ&hl=zh-CN">Yaxin Du</a><sup>1</sup>,</span>
+              <a href="">Yaxin Du</a><sup>1*</sup>,</span>
             <span class="author-block">
-              <a href="">Yuzhu Cai</a><sup>1,3</sup>,</span>
+              <a href="">Yuzhu Cai</a><sup>2*</sup>,</span>
             <span class="author-block">
-              <a href="">Yifan Zhou</a><sup>x</sup>,
+              <a href="">Yifan Zhou</a><sup>3</sup>,
             </span>
             <span class="author-block">
               <a href="">Cheng Wang</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="">Yu Qian</a><sup>x</sup>,
+              <a href="">Yu Qian</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="">Xianghe Pang</a><sup>x</sup>,
+              <a href="">Xianghe Pang</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="">Qian Liu</a><sup>x</sup>,
+              <a href="">Qian Liu</a><sup>4</sup>,
             </span>
             <span class="author-block">
-              <a href="">Yue Hu</a><sup>x</sup>,
+              <a href="">Yue Hu</a><sup>5</sup>,
             </span>
             <span class="author-block">
-              <a href="">Siheng Chen</a><sup>1,3</sup>
+              <a href="">Siheng Chen</a><sup>1</sup>
             </span>
 
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Cooperative Medianet Innovation Center, Shanghai Jiao Tong University,</span>
+            <span class="author-block"><sup>1</sup>Shanghai Jiao Tong University,</span>
           </div>
           <div class="is-size-5 publication-authors">
-            
-            <span class="author-block"><sup>3</sup>Shanghai AI Laboratory</span>
+            <span class="author-block"><sup>2</sup>Beijing University of Aeronautics and Astronautics,</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>3</sup>Soochow University,</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>4</sup>Tiktok,</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>5</sup>University of Michigan</span>
           </div>
 
           <div class="column has-text-centered">
@@ -313,9 +337,6 @@
 
       <img src="static/image/overview.jpg" class="center"/>
 
-    <p class="text-content">
-      content0
-    </p>
     </div>
   </div>
 </section>
@@ -327,7 +348,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <p>Large Language Models (LLMs) have shown strong capability in diverse software engineering tasks, e.g. code completion, bug fixing, and document generation. However, feature-driven development (FDD), a highly prevalent real-world task that involves developing new functionalities for large, existing codebases, remains underexplored. We therefore introduce SWE-Dev, the first large-scale dataset (with 14,000 training and 500 test samples) designed to evaluate and train autonomous coding systems on real-world feature development tasks. To ensure verifiable and diverse training, SWE-Dev uniquely provides all instances with a runnable environment and its developer-authored executable unit tests. This collection not only provides high-quality data for Supervised Fine-Tuning (SFT), but also enables Reinforcement Learning (RL) by delivering accurate reward signals from executable unit tests. Our extensive evaluations on SWE-Dev, covering 17 chatbot LLMs, 10 reasoning models, and 10 Multi-Agent Systems (MAS), reveal that FDD is a profoundly challenging frontier for current AI (e.g., Claude-3.7-Sonnet achieves only 22.45% Pass@3 on the hard test split). Crucially, we demonstrate that SWE-Dev serves as an effective platform for model improvement: fine-tuning on training set enabled a 7B model comparable to GPT-4o on \textit{hard} split, underscoring the value of its high-quality training data.
+          <p>Large Language Models (LLMs) have shown strong capability in diverse software engineering tasks, e.g. code completion, bug fixing, and document generation. However, feature-driven development (FDD), a highly prevalent real-world task that involves developing new functionalities for large, existing codebases, remains underexplored. We therefore introduce SWE-Dev, the first large-scale dataset (with 14,000 training and 500 test samples) designed to evaluate and train autonomous coding systems on real-world feature development tasks. To ensure verifiable and diverse training, SWE-Dev uniquely provides all instances with a runnable environment and its developer-authored executable unit tests. This collection not only provides high-quality data for Supervised Fine-Tuning (SFT), but also enables Reinforcement Learning (RL) by delivering accurate reward signals from executable unit tests. Our extensive evaluations on SWE-Dev, covering 17 chatbot LLMs, 10 reasoning models, and 10 Multi-Agent Systems (MAS), reveal that FDD is a profoundly challenging frontier for current AI (e.g., Claude-3.7-Sonnet achieves only 22.45% Pass@3 on the hard test split). Crucially, we demonstrate that SWE-Dev serves as an effective platform for model improvement: fine-tuning on training set enabled a 7B model comparable to GPT-4o on hard split, underscoring the value of its high-quality training data.
             Read more about SWE-Dev in our <a href="https://arxiv.org/abs/2410.16946" ,="" target="_blank">paper</a>!</p>
         </div>
       </div>
@@ -337,44 +358,57 @@
 </section>
 
 <section class="section">
-  <div class="container is-max-desktop">
-    <!-- Method. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-full_width">
-        <hr>
-        <h2 class="title is-3">Benchmark&nbsp;&nbsp;Construction</h2>
-        <br>
-        <img src="static/image/data_construction.jpg" class="center" style="width: 90%;"/>
-        <br>
-        <div class="content has-text-justified">
-          <br>  
-          <p>
-            content1
-          </p>
-        </div>
-      </div>
-    </div>
-    <hr>
-
-    
-    <!-- Applications.-->
     <div class="columns is-centered has-text-centered">
       <div class="column is-full_width">
         <h2 class="title is-3">Features</h2>
+        <br>
+        <img src="static/image/data_construction.jpg" class="center" style="width: 90%;"/>
+        <br>
       </div>
     </div>
     
-    <div class="content has-text-justified">
-        <br>  
-        <p>
-          <span style="color:#0ea7ff;"><b>content2
-        </p>
-        <p>
-          <span style="color:#0ea7ff;"><b>content3
-        </p>
-      </div>
+    <div class="feature">
+        <div class="feature-title">
+            <span class="feature-number">1</span>
+            Realistic scale and complexity
+        </div>
+        <div class="feature-content">
+            SWE-Dev requires substantial code modifications (avg. <span class="highlight">190 LOC across 3 files</span>), challenging models with the cross-file dependencies, large contexts, and significant implementation scope characteristic of real-world feature development.
+        </div>
     </div>
-</div>
+    
+    <div class="feature">
+        <div class="feature-title">
+            <span class="feature-number">2</span>
+            Robust and grounded evaluation
+        </div>
+        <div class="feature-content">
+            Each SWE-Dev sample is grounded in a real open-source repository, guided by a well-defined project requirement description (PRD), and evaluated using executable test cases to ensure the functional correctness of the proposed implementation. This design ensures alignment between task objectives and evaluation, enabling robust assessment and model supervision.
+        </div>
+    </div>
+    
+    <div class="feature">
+        <div class="feature-title">
+            <span class="feature-number">3</span>
+            Verifiable training set with executable test suites
+        </div>
+        <div class="feature-content">
+            Uniquely, all <span class="highlight">14,000 training instances</span> are paired with runnable environments and executable unit tests, providing crucial execution-based feedback that support:
+            
+            <div class="checkmark-list">
+                <div class="checkmark-item">
+                    <span class="checkmark">✓</span>
+                    Supervised Fine-Tuning (SFT)
+                </div>
+                <div class="checkmark-item">
+                    <span class="checkmark">✓</span>
+                    Reinforcement Learning (RL) with accurate rewards
+                </div>
+                <div class="checkmark-item">
+                    <span class="checkmark">✓</span>
+                    Multi-Agent System (MAS) training
+                </div>
+            </div>
 </section>
 
 <section class="section">
@@ -986,45 +1020,76 @@
         </table>
     </div>
       </div>
-    </div>
+
+<section class="section">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full_width">
-        <div class="content has-text-justified">
-          <br>
-          <p>
-            rSDE-Bench involves two typical real-world software types: website and game, which can reflect
-            different coding capacities demanded in realistic software development. 
-            <br>
-            <span style="color:#0ea7ff;"><b>Website</b></span> emphasizes static and dynamic
-            content management, user interaction through forms and buttons, and ensuring page elements are
-            displayed and functional.
-            <br>
-            <span style="color:#0ea7ff;"><b>Game</b></span> requires handling
-            dynamic interactions, and real-time state changes, focusing on elements like
-            logic execution, initialization, and game state transitions. 
-            <br><br>
-
-            rSDE-Bench introduces two requirement difficulty levels, including <b>basic</b> and <b>advanced</b>.
-            <br>
-            - The <span style="color:#0ea7ff;"><b>% Basic</b></span> metric refers to the percentage of rSDE-Bench basic test cases
-            that were <i>passed</i> by the model.
-            <br>
-            - The <span style="color:#0ea7ff;"><b>% Advanced</b></span> metric refers to the percentage of rSDE-Bench advanced test cases
-            that were <i>passed</i> by the model.
-            <br>
-            - <span style="color:#0ea7ff;"><b>✅ Checked</b></span> indicates that the model system operates as a multi-agent system, while the absence of ✅ Checked denotes a single-agent system.
-          </p>
-        </div>
+        <h2 class="title is-4">Comparison of Pass@3 scores for 17 chatbot and 10 reasoning LLMs on SWE-Dev</h2>
+        <img src="static/image/single_infer.jpg" class="center" style="width: 90%;"/>
+      </div>
     </div>
-    <!--/ Abstract. -->
-  </div>
+</section>      
+
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Method. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full_width">
+        <h2 class="title is-3">Training Support</h2>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full_width">
+        <h2 class="title is-4">Single Agent Training</h2>
+        <p>We evaluate SWE-Dev's support for different training methods, including SFT, RL.</p>
+          <div class="two_picture_container">
+            <div class="two_picture_image-box">
+            <h3>SFT</h3>
+            <img src="static/image/single_sft.jpg" alt="SFT">
+            </div>
+            <div class="two_picture_image-box">
+            <h3>RL</h3>
+            <img src="static/image/single_rl.jpg" alt="RL">
+            </div>
+        </div>
+      </div>
+      <div class="column is-full_width">
+        <h2 class="title is-4">MultiAgent Training</h2>
+        <p>MAS has shown promising results on SWE-Dev, and we further investigate the training process of MAS on this dataset. As depicted in Fig. 7, the ground truth test case supervision in SWE-Dev enables EvoMAC to improve its performance across multiple rounds of reasoning. This iterative refinement process motivates us to explore EvoMAC as the MAS for training in SWE-Dev. We apply rejection sampling to enhance agent performance via role-wise training.</p>
+        <img src="static/image/MultiAgent_Training.jpg" class="center" style="width: 90%;"/>
+      </div>
+    </div>
+
+    </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Method. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full_width">
+        <h2 class="title is-3">Dataset  Construction</h2>
+        <br>
+        <img src="static/image/data_construction.jpg" class="center" style="width: 90%;"/>
+        <br>
+        <img src="static/image/dataset_Statistics.jpg" class="center" style="width: 90%;"/>        
+      </div>
+    </div>
+    </div>
 </section>
 
 <hr>
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>citation
+    <pre><code>@article{du2025swe,
+  title={SWE-Dev: Evaluating and Training Autonomous Feature-Driven Software Development},
+  author={Du, Yaxin and Cai, Yuzhu and Zhou, Yifan and Wang, Cheng and Qian, Yu and Pang, Xianghe and Liu, Qian and Hu, Yue and Chen, Siheng},
+  journal={arXiv preprint arXiv:2505.16975},
+  year={2025}
 }</code></pre>
   </div>
 </section>
