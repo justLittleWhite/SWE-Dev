@@ -6,21 +6,7 @@
         content="Where2comm: Communication-Efficient Collaborative Perception via Spatial Confidence Maps">
   <meta name="keywords" content="3D detection, Collaborative perception, Communication-Efficient">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- <title>AirDet</title> -->
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', 'G-PYVRSFMDRL');
-  </script> -->
   <link rel="icon" type="image/png" href="./static/images/cmic.jpeg"> 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -56,23 +42,6 @@
             width: 70%;
             margin-left: auto;
             margin-right: auto;
-        }
-        .two_picture_container {
-        display: flex;
-        gap: 20px; /* 图片之间的间距 */
-        justify-content: center; /* 水平居中 */
-        }
-        .two_picture_image-box {
-        text-align: center; /* 标题和图片居中对齐 */
-        }
-        .two_picture_image-box img {
-        width: 200px; /* 图片宽度，可根据需要调整 */
-        height: auto;
-        display: block; /* 确保图片为块级元素 */
-        }
-        .two_picture_image-box h3 {
-        margin: 0 0 10px 0; /* 标题底部间距 */
-        font-size: 18px; /* 标题字体大小 */
         }
         .switch-button {
             padding: 10px 20px;
@@ -356,12 +325,12 @@
       <div class="column is-full_width">
         <h2 class="title is-3">Features</h2>
         <div class="hero-body">
-        <img src="static/image/data_construction.jpg" class="center" style="max-width: 70%; height: auto;"/>
+        <img src="static/image/data_construction.jpg" class="center" style="max-width: 50%; height: auto;"/>
         </div>
       </div>
     </div>
     
-    <div class="feature">
+    <div class="feature" style="max-width: 50%;">
         <div class="feature-title">
             <span class="feature-number">1</span>
             Realistic scale and complexity
@@ -371,7 +340,7 @@
         </div>
     </div>
     
-    <div class="feature">
+    <div class="feature" style="max-width: 50%;">
         <div class="feature-title">
             <span class="feature-number">2</span>
             Robust and grounded evaluation
@@ -381,7 +350,7 @@
         </div>
     </div>
     
-    <div class="feature">
+    <div class="feature" style="max-width: 50%;">
         <div class="feature-title">
             <span class="feature-number">3</span>
             Verifiable training set with executable test suites
@@ -1036,15 +1005,15 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-full_width">
         <h2 class="title is-4">Single Agent Training</h2>
-        <p>We evaluate SWE-Dev's support for different training methods, including SFT, RL.</p>
-            <h3>SFT</h3>
+            <p style="text-align: right;">We evaluate SWE-Dev's support for different training methods, including <strong style="font-size: 1.2em;">SFT</strong>, <strong style="font-size: 1.2em;">RL</strong>.</p>
+            <h3><strong style="font-size: 1.2em;">SFT</strong></h3>
             <img src="static/image/single_sft.png" >
-            <h3>RL</h3>
+            <h3><strong style="font-size: 1.2em;">RL</strong></h3>
             <img src="static/image/single_rl.png">
       </div>
       <div class="column is-full_width">
         <h2 class="title is-4">MultiAgent Training</h2>
-        <p>MAS has shown promising results on SWE-Dev, and we further investigate the training process of MAS on this dataset. As depicted in Fig. 7, the ground truth test case supervision in SWE-Dev enables EvoMAC to improve its performance across multiple rounds of reasoning. This iterative refinement process motivates us to explore EvoMAC as the MAS for training in SWE-Dev. We apply rejection sampling to enhance agent performance via role-wise training.</p>
+        <p style="text-align: right;">MAS has shown promising results on SWE-Dev, and we further investigate the training process of MAS on this dataset. As depicted in Fig. 7, the ground truth test case supervision in SWE-Dev enables EvoMAC to improve its performance across multiple rounds of reasoning. This iterative refinement process motivates us to explore EvoMAC as the MAS for training in SWE-Dev. We apply rejection sampling to enhance agent performance via role-wise training.</p>
         <img src="static/image/MultiAgent_Training.png" class="center" style="width: 90%;"/>
       </div>
     </div>
