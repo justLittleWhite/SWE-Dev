@@ -276,17 +276,11 @@
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>Shanghai Jiao Tong University,</span>
-          </div>
-          <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>2</sup>Beijing University of Aeronautics and Astronautics,</span>
           </div>
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>3</sup>Soochow University,</span>
-          </div>
-          <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>4</sup>Tiktok,</span>
-          </div>
-          <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>5</sup>University of Michigan</span>
           </div>
 
@@ -361,9 +355,9 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-full_width">
         <h2 class="title is-3">Features</h2>
-        <br>
-        <img src="static/image/data_construction.jpg" class="center" style="width: 90%;"/>
-        <br>
+        <div class="hero-body">
+        <img src="static/image/data_construction.jpg" class="center"/>
+        </div>
       </div>
     </div>
     
@@ -397,15 +391,15 @@
             
             <div class="checkmark-list">
                 <div class="checkmark-item">
-                    <span class="checkmark">✓</span>
+                    <span class="checkmark">✅</span>
                     Supervised Fine-Tuning (SFT)
                 </div>
                 <div class="checkmark-item">
-                    <span class="checkmark">✓</span>
+                    <span class="checkmark">✅</span>
                     Reinforcement Learning (RL) with accurate rewards
                 </div>
                 <div class="checkmark-item">
-                    <span class="checkmark">✓</span>
+                    <span class="checkmark">✅</span>
                     Multi-Agent System (MAS) training
                 </div>
             </div>
@@ -415,7 +409,6 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
-        <hr>
         <h2 class="title is-3">Leaderboard</h2>
       </div>
     </div>
@@ -1025,7 +1018,7 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-full_width">
         <h2 class="title is-4">Comparison of Pass@3 scores for 17 chatbot and 10 reasoning LLMs on SWE-Dev</h2>
-        <img src="static/image/single_infer.jpg" class="center" style="width: 90%;"/>
+        <img src="static/image/single_infer.png" class="center" style="width: 90%;"/>
       </div>
     </div>
 </section>      
@@ -1034,7 +1027,6 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Method. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-full_width">
         <h2 class="title is-3">Training Support</h2>
@@ -1048,18 +1040,18 @@
           <div class="two_picture_container">
             <div class="two_picture_image-box">
             <h3>SFT</h3>
-            <img src="static/image/single_sft.jpg" alt="SFT">
+            <img src="static/image/single_sft.png" alt="SFT">
             </div>
             <div class="two_picture_image-box">
             <h3>RL</h3>
-            <img src="static/image/single_rl.jpg" alt="RL">
+            <img src="static/image/single_rl.png" alt="RL">
             </div>
         </div>
       </div>
       <div class="column is-full_width">
         <h2 class="title is-4">MultiAgent Training</h2>
         <p>MAS has shown promising results on SWE-Dev, and we further investigate the training process of MAS on this dataset. As depicted in Fig. 7, the ground truth test case supervision in SWE-Dev enables EvoMAC to improve its performance across multiple rounds of reasoning. This iterative refinement process motivates us to explore EvoMAC as the MAS for training in SWE-Dev. We apply rejection sampling to enhance agent performance via role-wise training.</p>
-        <img src="static/image/MultiAgent_Training.jpg" class="center" style="width: 90%;"/>
+        <img src="static/image/MultiAgent_Training.png" class="center" style="width: 90%;"/>
       </div>
     </div>
 
@@ -1075,7 +1067,7 @@
         <br>
         <img src="static/image/data_construction.jpg" class="center" style="width: 90%;"/>
         <br>
-        <img src="static/image/dataset_Statistics.jpg" class="center" style="width: 90%;"/>        
+        <img src="static/image/dataset_Statistics.png" class="center" style="width: 90%;"/>        
       </div>
     </div>
     </div>
