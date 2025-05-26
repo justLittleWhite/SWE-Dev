@@ -100,7 +100,7 @@
         
         /* 表头样式 */
         thead tr:first-child th {
-            background-color: #abadad;
+            background-color: #dae2e2;
             font-weight: bold;
             color: #333;
         }
@@ -334,8 +334,7 @@
     
     <div class="feature" style="max-width: 60%;margin: auto">
         <div class="feature-title">
-            <span class="feature-number" style="color: rgb(0, 153, 255); font-weight: bold;">1</span>
-            Realistic scale and complexity
+            <span class="feature-number" style="color: rgb(0, 153, 255); font-weight: bold;">1 Realistic scale and complexity</span>
         </div>
         <div class="feature-content">
             SWE-Dev requires substantial code modifications (avg. <span class="highlight">190 LOC across 3 files</span>), challenging models with the cross-file dependencies, large contexts, and significant implementation scope characteristic of real-world feature development.
@@ -344,8 +343,7 @@
     
     <div class="feature" style="max-width: 60%;margin: auto">
         <div class="feature-title">
-            <span class="feature-number" style="color: rgb(0, 153, 255); font-weight: bold;">2</span>
-            Robust and grounded evaluation
+            <span class="feature-number" style="color: rgb(0, 153, 255); font-weight: bold;">2 Robust and grounded evaluation</span>
         </div>
         <div class="feature-content">
             Each SWE-Dev sample is grounded in a real open-source repository, guided by a well-defined project requirement description (PRD), and evaluated using executable test cases to ensure the functional correctness of the proposed implementation. This design ensures alignment between task objectives and evaluation, enabling robust assessment and model supervision.
@@ -354,8 +352,7 @@
     
     <div class="feature" style="max-width: 60%;margin: auto">
         <div class="feature-title">
-            <span class="feature-number" style="color: rgb(0, 153, 255); font-weight: bold;">3</span>
-            Verifiable training set with executable test suites
+            <span class="feature-number" style="color: rgb(0, 153, 255); font-weight: bold;">3 Verifiable training set with executable test suites</span>
         </div>
         <div class="feature-content">
             Uniquely, all <span class="highlight">14,000 training instances</span> are paired with runnable environments and executable unit tests, providing crucial execution-based feedback that support:
@@ -1008,26 +1005,26 @@
 
     <div class="columns is-centered has-text-centered">
         <div class="column is-full-width">
-            <h2 class="title is-4">Single Agent Training</h2>
+            <h2 class="title is-4">1️⃣ Single Agent Training</h2>
             <p style="text-align: center;">We evaluate SWE-Dev's support for different training methods, including <strong style="font-size: 1.2em;">SFT</strong>, <strong style="font-size: 1.2em;">RL</strong>.</p>
             
             <!-- 使用 Flexbox 布局让图片并列 -->
-            <div style="display: flex; justify-content: space-around; align-items: center;">
-                <div>
-                    <h3><strong style="font-size: 1.2em;">SFT</strong></h3>
-                    <img src="static/image/single_sft.png" style="max-width: 100%; height: auto;">
-                </div>
-                <div>
-                    <h3><strong style="font-size: 1.2em;">RL</strong></h3>
-                    <img src="static/image/single_rl.png" style="max-width: 100%; height: auto;">
-                </div>
+        <div style="display: flex; justify-content: space-around; align-items: center;">
+            <div>
+                <h3><strong style="font-size: 1.2em;">SFT</strong></h3>
+                <img src="static/image/single_sft.png" style="max-width: 100%; height: 200px;">
             </div>
+            <div>
+                <h3><strong style="font-size: 1.2em;">RL</strong></h3>
+                <img src="static/image/single_rl.png" style="max-width: 100%; height: 200px;">
+            </div>
+        </div>
         </div>
     </div>
 
     <div class="columns is-centered has-text-centered">
     <div class="column is-full-width">
-        <h2 class="title is-4">MultiAgent Training</h2>
+        <h2 class="title is-4">2️⃣ MultiAgent Training</h2>
         <p style="text-align: left;">MAS has shown promising results on SWE-Dev, and we further investigate the training process of MAS on this dataset. As depicted in Fig. 7, the ground truth test case supervision in SWE-Dev enables EvoMAC to improve its performance across multiple rounds of reasoning. This iterative refinement process motivates us to explore EvoMAC as the MAS for training in SWE-Dev. We apply rejection sampling to enhance agent performance via role-wise training.</p>
         <br>
         <img src="static/image/MultiAgent_Training.png" class="center" style="width: 90%;"/>
