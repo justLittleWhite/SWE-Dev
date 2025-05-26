@@ -6,7 +6,21 @@
         content="Where2comm: Communication-Efficient Collaborative Perception via Spatial Confidence Maps">
   <meta name="keywords" content="3D detection, Collaborative perception, Communication-Efficient">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <title>AirDet</title> -->
 
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script> -->
   <link rel="icon" type="image/png" href="./static/images/cmic.jpeg"> 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -25,170 +39,6 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            margin: 20px;
-            background-color: #f5f5f5;
-        }
-       
-        .button-container {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-            background-color: #e0e0e0;
-            border-radius: 5px;
-            overflow: hidden;
-            width: 70%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .switch-button {
-            padding: 10px 20px;
-            border: none;
-            background-color: transparent;
-            color: #333;
-            cursor: pointer;
-            font-size: 18px;
-            transition: background-color 0.3s;
-            border-right: 1px solid #ccc;
-            flex: 1; /* 使按钮均匀分布 */
-
-        }
-        
-        .switch-button:last-child {
-            border-right: none; /* 移除最后一个按钮的右边框 */
-        }
-        
-        .switch-button.active {
-            background-color: #fff;
-            font-weight: bold;
-        }
-        
-        .switch-button:hover {
-            background-color: #d0d0d0;
-        }
-
-        .table-container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            overflow-x: auto;
-            margin: 0 auto;
-            width: fit-content; /* 确保表格居中并自适应内容 */
-            display: none; /* 默认隐藏所有表格 */
-
-        }
-        .table-container.active {
-            display: block; /* 显示激活的表格 */
-        }        
-        table {
-            width:auto;
-            border-collapse: collapse;
-            font-size: 18px;
-            margin: 0 auto;
-            table-layout: fixed;
-        }
-        
-        th, td {
-            padding: 10px 14px;
-            text-align: center;
-            border: 1px solid #e0e0e0;
-            box-sizing: border-box;
-        }
-        
-        /* 表头样式 */
-        thead tr:first-child th {
-            background-color: #dae2e2;
-            font-weight: bold;
-            color: #333;
-        }
-        
-        /* 子表头样式 */
-        thead tr:nth-child(2) th {
-            background-color: #f1f3f4;
-            font-size: 18px;
-            color: #666;
-            font-weight: bold;
-        }
-        
-        /* 行号列 */
-        td:first-child {
-            background-color: #f8f9fa;
-            font-weight: 600;
-            color: #333;
-        }
-        
-        /* 奇数行背景 */
-        tbody tr:nth-child(odd) {
-            background-color: #fafafa;
-        }
-        
-        /* 模型名称样式 */
-        .model-name {
-            font-weight: bold;
-            color: #1a73e8;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            text-align: left;
-        }
-        
-        .model-name:hover {
-            text-decoration: underline;
-        }
-        
-        /* 大脑表情 */
-        .brain-emoji {
-            margin-left: 6px;
-            font-size: 14px;
-        }
-        
-        /* 公司名称 */
-        .company {
-            font-size: 11px;
-            color: #666;
-            font-weight: normal;
-            margin-top: 2px;
-            font-weight: bold;
-        }
-        
-        /* 日期颜色 */
-        .date {
-            color: #00a851;
-            font-weight: 500;
-        }
-        
-        /* 数据单元格 */
-        .data-cell {
-            font-weight: 500;
-        }
-        
-        /* 参数和上下文列 */
-        .params-context {
-            font-weight: 500;
-            color: #333;
-        }
-        
-        /* 模型信息列 */
-        .model-info {
-            text-align: left;
-            padding-left: 16px;
-        }
-        /* Calls 列宽度设置 */
-        th:nth-child(2), td:nth-child(2)
-        th:nth-child(4), td:nth-child(4)
-        th:nth-child(5), td:nth-child(5), /* Easy Pass@1 */
-        th:nth-child(6), td:nth-child(6), /* Easy Calls */
-        th:nth-child(7), td:nth-child(7), /* Easy Prices */
-        th:nth-child(8), td:nth-child(8), /* Hard Pass@1 */
-        th:nth-child(9), td:nth-child(9), /* Hard Calls */
-        th:nth-child(10), td:nth-child(10) /* Hard Prices */ {
-            width: auto !important;/* 设置统一的宽度 */
-         }
-    </style>  
 </head>
 <body>
 
@@ -200,6 +50,28 @@
       <span aria-hidden="true"></span>
     </a>
   </div>
+  <!-- <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://jaraxxus-me.github.io/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://ieeexplore.ieee.org/document/9561564">
+            ADTrack - ICRA 2021
+          </a>
+          <a class="navbar-item" href="https://openaccess.thecvf.com/content/ICCV2021/papers/Cao_HiFT_Hierarchical_Feature_Transformer_for_Aerial_Tracking_ICCV_2021_paper.pdf">
+            HiFT - ICCV 2021
+          </a>
+        </div>
+      </div>
+    </div> -->
 
   </div>
 </nav>
@@ -210,54 +82,55 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-
-          <h1 class="title is-2 publication-title">SWE-Dev: Evaluating and Training Autonomous Feature-Driven Software Development</h1>
-          <h3 class="title is-5">Code and data for paper: <a href="https://arxiv.org/pdf/2505.16975">SWE-Dev: Evaluating and Training Autonomous Feature-Driven Software Development</a></h2>
-
+          <!-- <h1 class="title is-1 publication-title"><img src="./static/images/drone.svg" width="120">AirDet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1> -->
+          <h1 class="title is-2 publication-title">rSDE-Bench: Requirement-Oriented Software Development Benchmark</h1>
+          <h3 class="title is-5">Code and data for paper: <a href="https://arxiv.org/abs/2410.16946">Self-Evolving Multi-Agent Collaboration Networks for Software Development</a></h2>
+          <!-- <div class="column is-full_width">
+            <h2 class="title is-4">Accepted by NeurIPS 2022 Spotlight</h2>
+          </div> -->
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="">Yaxin Du</a><sup>1*</sup>,</span>
+              <a href="https://scholar.google.com/citations?user=XBbwb78AAAAJ&hl=zh-CN">Yue Hu</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="">Yuzhu Cai</a><sup>2*</sup>,</span>
+              <a href="">Yuzhu Cai</a><sup>1,2,3</sup>,</span>
             <span class="author-block">
-              <a href="">Yifan Zhou</a><sup>3</sup>,
+              <a href="">Yaxin Du</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="">Cheng Wang</a><sup>1</sup>,
+              <a href="">Xinyu Zhu</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="">Yu Qian</a><sup>1</sup>,
+              <a href="">Xiangrui Liu</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="">Xianghe Pang</a><sup>1</sup>,
+              <a href="">Zijie Yu</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="">Qian Liu</a><sup>4</sup>,
+              <a href="">Yuchen Hou</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="">Yue Hu</a><sup>5</sup>,
+              <a href="">Shuo Tang</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="">Siheng Chen</a><sup>1</sup>
+              <a href="">Siheng Chen</a><sup>1,3</sup>
             </span>
 
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Shanghai Jiao Tong University,</span>
-            <span class="author-block"><sup>2</sup>Beijing University of Aeronautics and Astronautics,</span>
+            <span class="author-block"><sup>1</sup>Cooperative Medianet Innovation Center, Shanghai Jiao Tong University,</span>
           </div>
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>3</sup>Soochow University,</span>
-            <span class="author-block"><sup>4</sup>Tiktok,</span>
-            <span class="author-block"><sup>5</sup>University of Michigan</span>
+            <span class="author-block"><sup>2</sup>Beihang University, </span>
+            
+            <span class="author-block"><sup>3</sup>Shanghai AI Laboratory</span>
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2505.16975"
+                <a href="https://arxiv.org/abs/2410.16946"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -266,7 +139,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2505.16975"
+                <a href="https://arxiv.org/abs/2410.16946"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -274,9 +147,19 @@
                   <span>arXiv</span>
                 </a>
               </span>
-
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://justlittlewhite.github.io/SWE-Dev"
+                <a href="https://github.com/yuzhu-cai/rSDE-Bench"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -284,7 +167,34 @@
                   <span>Code</span>
                   </a>
               </span>
-
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/Jaraxxus-Me/AirDet"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                </a>
+              </span> -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/Jaraxxus-Me/AirDet_ROS"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-robot"></i>
+                  </span>
+                  <span>ROS</span>
+                </a>
+              </span> -->
+              <!-- <span class="link-block">
+                <a href="https://zhuanlan.zhihu.com/p/545249730"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-blog"></i>
+                  </span>
+                  <span>Blog</span>
+                </a>
+              </span> -->
             </div>
 
           </div>
@@ -298,8 +208,22 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
 
-      <img src="static/image/overview.jpg" class="center"/>
-
+      <img src="static\images\Intro.jpg" class="center"/>
+      <!-- <video id="teaser" autoplay muted loop height="100%">
+        <source src="./static/images/SUBT_video.mp4"
+                type="video/mp4">
+      </video> -->
+      <!-- <img class="rounded" src="./media/nice-slam/teaser.png" > -->
+      <br><br><br>
+      <!-- <h2 class="subtitle has-text-centered">
+        
+    </h2> -->
+    <!-- <h2 class="subtitle has-text-centered">
+      (The <span style="color:#000000;">black</span> / <span style="color:#ff0000;">red</span> lines are the ground truth / predicted camera trajectory)
+    </h2> -->
+    <p class="text-content">
+      Comparison between instruction-oriented and requirement-oriented evaluations. rSDE-Bench accurately reflects requirement fulfillment with the proposed accuracy score of 2/13, while the indrection evaluation misjudges with high scores (0.89), failing to detect missing functionality.
+    </p>
     </div>
   </div>
 </section>
@@ -311,8 +235,8 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <p>Large Language Models (LLMs) have shown strong capability in diverse software engineering tasks, e.g. code completion, bug fixing, and document generation. However, feature-driven development (FDD), a highly prevalent real-world task that involves developing new functionalities for large, existing codebases, remains underexplored. We therefore introduce SWE-Dev, the first large-scale dataset (with 14,000 training and 500 test samples) designed to evaluate and train autonomous coding systems on real-world feature development tasks. To ensure verifiable and diverse training, SWE-Dev uniquely provides all instances with a runnable environment and its developer-authored executable unit tests. This collection not only provides high-quality data for Supervised Fine-Tuning (SFT), but also enables Reinforcement Learning (RL) by delivering accurate reward signals from executable unit tests. Our extensive evaluations on SWE-Dev, covering 17 chatbot LLMs, 10 reasoning models, and 10 Multi-Agent Systems (MAS), reveal that FDD is a profoundly challenging frontier for current AI (e.g., Claude-3.7-Sonnet achieves only 22.45% Pass@3 on the hard test split). Crucially, we demonstrate that SWE-Dev serves as an effective platform for model improvement: fine-tuning on training set enabled a 7B model comparable to GPT-4o on hard split, underscoring the value of its high-quality training data.
-            Read more about SWE-Dev in our <a href="https://arxiv.org/pdf/2505.16975" ,="" target="_blank">paper</a>!</p>
+          <p>rSDE-Bench is a requirement-oriented benchmark designed to evaluate the ability of models to handle software-level coding tasks. Unlike instruction-based approaches, rSDE-Bench uses detailed software requirements as input, specifying each functionality and constraint of the software. The benchmark includes automatic evaluation through unit tests, providing a more realistic assessment aligned with real-world software development practices.
+            Read more about rSDE-Bench in our <a href="https://arxiv.org/abs/2410.16946" ,="" target="_blank">paper</a>!</p>
         </div>
       </div>
     </div>
@@ -321,747 +245,745 @@
 </section>
 
 <section class="section">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-full_width">
-        <hr>
-        <h2 class="title is-3">Features</h2>
-        <div class="hero-body">
-        <img src="static/image/data_construction.jpg" class="center" style="max-width: 50%; height: auto;"/>
-        </div>
-      </div>
-    </div>
-    
-    <div class="feature" style="max-width: 60%;margin: auto">
-        <div class="feature-title">
-            <span class="feature-number" style="color: rgb(0, 153, 255); font-weight: bold;">1 Realistic scale and complexity</span>
-        </div>
-        <div class="feature-content">
-            SWE-Dev requires substantial code modifications (avg. <span class="highlight">190 LOC across 3 files</span>), challenging models with the cross-file dependencies, large contexts, and significant implementation scope characteristic of real-world feature development.
-        </div>
-    </div>
-    
-    <div class="feature" style="max-width: 60%;margin: auto">
-        <div class="feature-title">
-            <span class="feature-number" style="color: rgb(0, 153, 255); font-weight: bold;">2 Robust and grounded evaluation</span>
-        </div>
-        <div class="feature-content">
-            Each SWE-Dev sample is grounded in a real open-source repository, guided by a well-defined project requirement description (PRD), and evaluated using executable test cases to ensure the functional correctness of the proposed implementation. This design ensures alignment between task objectives and evaluation, enabling robust assessment and model supervision.
-        </div>
-    </div>
-    
-    <div class="feature" style="max-width: 60%;margin: auto">
-        <div class="feature-title">
-            <span class="feature-number" style="color: rgb(0, 153, 255); font-weight: bold;">3 Verifiable training set with executable test suites</span>
-        </div>
-        <div class="feature-content">
-            Uniquely, all <span class="highlight">14,000 training instances</span> are paired with runnable environments and executable unit tests, providing crucial execution-based feedback that support:
-            
-            <div class="checkmark-list">
-                <div class="checkmark-item">
-                    <span class="checkmark">✅</span>
-                    Supervised Fine-Tuning (SFT)
-                </div>
-                <div class="checkmark-item">
-                    <span class="checkmark">✅</span>
-                    Reinforcement Learning (RL) with accurate rewards
-                </div>
-                <div class="checkmark-item">
-                    <span class="checkmark">✅</span>
-                    Multi-Agent System (MAS) training
-                </div>
-            </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-full-width">
-        <hr>
-        <h2 class="title is-3">Leaderboard</h2>
-      </div>
-    </div>
-   <div class="button-container">
-            <button class="switch-button active" onclick="switchTable('table1')">Signle Agent</button>
-            <button class="switch-button" onclick="switchTable('table2')">Multi Agent System</button>
-    </div>
-
-    <div class="table-container active" id ="table1">
-        <table>
-            <thead>
-                <tr>
-                    <th rowspan="2">#</th>
-                    <th rowspan="2">Model</th>
-                    <th rowspan="2">Params</th>
-                    <th rowspan="2">Date</th>
-                    <th colspan="2">Pass @1 (%)</th>
-                </tr>
-                <tr>
-                    <th colspan="1">Easy</th>
-                    <th colspan="1">Hard</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td class="model-info">
-                        <div class="model-name">
-                            Qwen3-8B
-                        </div>
-                        <div class="company">Qwen</div>
-                    </td>
-                    <td class="params-context">8B</td>
-                    <td class="date">2025-04-29</td>
-                    <td class="data-cell">34.04</td>
- 
-                    <td class="data-cell">12.09</td>
- 
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td class="model-info">
-                        <div class="model-name">
-                            Qwen3-8B<span class="brain-emoji">🧠</span>
-                        </div>
-                        <div class="company">Qwen</div>
-                    </td>
-                    <td class="params-context">8B</td>
-                    <td class="date">2025-04-29</td>
-                    <td class="data-cell">19.47</td>
- 
-                    <td class="data-cell">6.36</td>
- 
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td class="model-info">
-                        <div class="model-name">
-                            Qwen3-30B-A3B
-                        </div>
-                        <div class="company">Qwen</div>
-                    </td>
-                    <td class="params-context">30B</td>
-                    <td class="date">2025-04-29</td>
-                    <td class="data-cell">35.84</td>
- 
-                    <td class="data-cell">12.76</td>
- 
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td class="model-info">
-                        <div class="model-name">
-                            Qwen3-30B-A3B<span class="brain-emoji">🧠</span>
-                        </div>
-                        <div class="company">Qwen</div>
-                    </td>
-                    <td class="params-context">30B</td>
-                    <td class="date">2025-04-29</td>
-                    <td class="data-cell">23.63</td>
- 
-                    <td class="data-cell">8.30</td>
- 
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td class="model-info">
-                        <div class="model-name">
-                            o3<span class="brain-emoji">🧠</span>
-                        </div>
-                        <div class="company">OpenAI</div>
-                    </td>
-                    <td class="params-context">-</td>
-                    <td class="date">2025-04-16</td>
-                    <td class="data-cell">51.21</td>
- 
-                    <td class="data-cell">21.86</td>
- 
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td class="model-info">
-                        <div class="model-name">
-                            QwQ-32B-Preview <span class="brain-emoji">🧠</span>
-                        </div>
-                        <div class="company">Qwen</div>
-                    </td>
-                    <td class="params-context">32B</td>
-                    <td class="date">2025-03-06</td>
-                    <td class="data-cell">4.50</td>
- 
-                    <td class="data-cell">0.70</td>
- 
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td class="model-info">
-                        <div class="model-name">
-                            Claude-3.7-Sonnet
-                        </div>
-                        <div class="company">Anthropic</div>
-                    </td>
-                    <td class="params-context">-</td>
-                    <td class="date">2025-02-25</td>
-                    <td class="data-cell">53.09</td>
- 
-                    <td class="data-cell">19.74</td>
- 
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td class="model-info">
-                        <div class="model-name">
-                            Claude-3.7-Sonnet <span class="brain-emoji">🧠</span>
-                        </div>
-                        <div class="company">Anthropic</div>
-                    </td>
-                    <td class="params-context">-</td>
-                    <td class="date">2025-02-25</td>
-                    <td class="data-cell">49.47</td>
- 
-                    <td class="data-cell">22.51</td>
- 
-                </tr>
-                <tr>
-                    <td>9</td>
-                    <td class="model-info">
-                        <div class="model-name">
-                            grok-3-beta <span class="brain-emoji">🧠</span>
-                        </div>
-                        <div class="company">xAI</div>
-                    </td>
-                    <td class="params-context">-</td>
-                    <td class="date">2025-02-19</td>
-                    <td class="data-cell">53.63</td>
- 
-                    <td class="data-cell">18.97</td>
- 
-                </tr>
-                <tr>
-                    <td>10</td>
-                    <td class="model-info">
-                        <div class="model-name">
-                            Deepseek-R1-distill-Qwen2.5-7B  <span class="brain-emoji">🧠</span>
-                        </div>
-                        <div class="company">deepseek-ai</div>
-                    </td>
-                    <td class="params-context">7B</td>
-                    <td class="date">2025-01-20</td>
-                    <td class="data-cell">6.30</td>
- 
-                    <td class="data-cell">1.29</td>
- 
-                </tr>
-                <tr>
-                    <td>11</td>
-                    <td class="model-info">
-                        <div class="model-name">
-                            Deepseek-R1-distill-Qwen2.5-32B  <span class="brain-emoji">🧠</span>
-                        </div>
-                        <div class="company">deepseek-ai</div>
-                    </td>
-                    <td class="params-context">32B</td>
-                    <td class="date">2025-01-20</td>
-                    <td class="data-cell">24.25</td>
- 
-                    <td class="data-cell">9.79</td>
- 
-                </tr>
-                <tr>
-                    <td>12</td>
-                    <td class="model-info">
-                        <div class="model-name">
-                            DeepSeek-R1-distill-Llama-70B  <span class="brain-emoji">🧠</span>
-                        </div>
-                        <div class="company">deepseek-ai</div>
-                    </td>
-                    <td class="params-context">70B</td>
-                    <td class="date">2025-01-20</td>
-                    <td class="data-cell">32.73</td>
- 
-                    <td class="data-cell">8.19</td>
- 
-                </tr>
-                <tr>
-                    <td>13</td>
-                    <td class="model-info">
-                        <div class="model-name">
-                            Deepseek-R1  <span class="brain-emoji">🧠</span>
-                        </div>
-                        <div class="company">deepseek-ai</div>
-                    </td>
-                    <td class="params-context">-</td>
-                    <td class="date">2025-01-20</td>
-                    <td class="data-cell">28.55</td>
- 
-                    <td class="data-cell">12.84</td>
- 
-                </tr>
-                <tr>
-                    <td>14</td>
-                    <td class="model-info">
-                        <div class="model-name">
-                            Deepseek-V3 
-                        </div>
-                        <div class="company">deepseek-ai</div>
-                    </td>
-                    <td class="params-context">-</td>
-                    <td class="date">2024-12-26</td>
-                    <td class="data-cell">41.95</td>
- 
-                    <td class="data-cell">16.22</td>
- 
-                </tr> 
-                <tr>
-                    <td>15</td>
-                    <td class="model-info">
-                        <div class="model-name">
-                            Phi-4
-                        </div>
-                        <div class="company">microsoft</div>
-                    </td>
-                    <td class="params-context">14B</td>
-                    <td class="date">2024-12-12</td>
-                    <td class="data-cell">21.99</td>
- 
-                    <td class="data-cell">5.57</td>
- 
-                </tr> 
-
-                <tr>
-                    <td>16</td>
-                    <td class="model-info">
-                        <div class="model-name">
-                            Llama3.3-70B-Instrcut
-                        </div>
-                        <div class="company">microsoft</div>
-                    </td>
-                    <td class="params-context">70B</td>
-                    <td class="date">2024-12-06</td>
-                    <td class="data-cell">33.84</td>
- 
-                    <td class="data-cell">12.85</td>
- 
-                </tr>   
-                <tr>
-                    <td>17</td>
-                    <td class="model-info">
-                        <div class="model-name">
-                            o1
-                        </div>
-                        <div class="company">OpenAI</div>
-                    </td>
-                    <td class="params-context">-</td>
-                    <td class="date">2024-12-05</td>
-                    <td class="data-cell">36.36</td>
- 
-                    <td class="data-cell">11.09</td>
- 
-                </tr>    
-                <tr>
-                    <td>18</td>
-                    <td class="model-info">
-                        <div class="model-name">
-                            Qwen2.5-1.5B-Instruct
-                        </div>
-                        <div class="company">Qwen</div>
-                    </td>
-                    <td class="params-context">1.5B</td>
-                    <td class="date">2024-09-19</td>
-                    <td class="data-cell">8.05</td>
- 
-                    <td class="data-cell">1.23</td>
- 
-                </tr>     
-                <tr>
-                    <td>19</td>
-                    <td class="model-info">
-                        <div class="model-name">
-                            Qwen2.5-Coder-14B-Instruct
-                        </div>
-                        <div class="company">Qwen</div>
-                    </td>
-                    <td class="params-context">14B</td>
-                    <td class="date">2024-11-12</td>
-                    <td class="data-cell">39.51</td>
- 
-                    <td class="data-cell">14.82</td>
- 
-                </tr>       
-                <tr>
-                    <td>20</td>
-                    <td class="model-info">
-                        <div class="model-name">
-                            Qwen2.5-3B-Instruct
-                        </div>
-                        <div class="company">Qwen</div>
-                    </td>
-                    <td class="params-context">3B</td>
-                    <td class="date">2024-09-19</td>
-                    <td class="data-cell">15.93</td>
- 
-                    <td class="data-cell">5.27</td>
- 
-                </tr>  
-                <tr>
-                    <td>21</td>
-                    <td class="model-info">
-                        <div class="model-name">
-                            Qwen2.5-7B-Instruct
-                        </div>
-                        <div class="company">Qwen</div>
-                    </td>
-                    <td class="params-context">7B</td>
-                    <td class="date">2024-09-19</td>
-                    <td class="data-cell">25.74</td>
- 
-                    <td class="data-cell">6.68</td>
- 
-                </tr>  
-                <tr>
-                    <td>22</td>
-                    <td class="model-info">
-                        <div class="model-name">
-                            Qwen2.5-14B-Instruct
-                        </div>
-                        <div class="company">Qwen</div>
-                    </td>
-                    <td class="params-context">14B</td>
-                    <td class="date">2024-09-19</td>
-                    <td class="data-cell">38.08</td>
- 
-                    <td class="data-cell">13.16</td>
- 
-                </tr> 
-                <tr>
-                    <td>23</td>
-                    <td class="model-info">
-                        <div class="model-name">
-                            Qwen2.5-32B-Instruct
-                        </div>
-                        <div class="company">Qwen</div>
-                    </td>
-                    <td class="params-context">32B</td>
-                    <td class="date">2024-09-19</td>
-                    <td class="data-cell">43.64</td>
- 
-                    <td class="data-cell">10.15</td>
- 
-                </tr>  
-                <tr>
-                    <td>24</td>
-                    <td class="model-info">
-                        <div class="model-name">
-                            Qwen2.5-72B-Instruct
-                        </div>
-                        <div class="company">Qwen</div>
-                    </td>
-                    <td class="params-context">72B</td>
-                    <td class="date">2024-09-19</td>
-                    <td class="data-cell">49.01</td>
- 
-                    <td class="data-cell">10.62</td>
- 
-                </tr>    
-                <tr>
-                    <td>25</td>
-                    <td class="model-info">
-                        <div class="model-name">
-                            Llama-3.1-8B-Instruct
-                        </div>
-                        <div class="company">meta-llama</div>
-                    </td>
-                    <td class="params-context">8B</td>
-                    <td class="date">2024-07-23</td>
-                    <td class="data-cell">26.43</td>
- 
-                    <td class="data-cell">7.94</td>
- 
-                </tr>   
-                <tr>
-                    <td>26</td>
-                    <td class="model-info">
-                        <div class="model-name">
-                            GPT-4o-mini
-                        </div>
-                        <div class="company">OpenAI</div>
-                    </td>
-                    <td class="params-context">-</td>
-                    <td class="date">2024-07-18</td>
-                    <td class="data-cell">34.47</td>
- 
-                    <td class="data-cell">11.09</td>
- 
-                </tr>   
-                <tr>
-                    <td>27</td>
-                    <td class="model-info">
-                        <div class="model-name">
-                            DeepSeek-Coder-V2-Lite-Instruct
-                        </div>
-                        <div class="company">deepseek-a</div>
-                    </td>
-                    <td class="params-context">-</td>
-                    <td class="date">2024-06-17</td>
-                    <td class="data-cell">21.53</td>
- 
-                    <td class="data-cell">8.19</td>
- 
-                </tr> 
-                <tr>
-                    <td>28</td>
-                    <td class="model-info">
-                        <div class="model-name">
-                            GPT-4o
-                        </div>
-                        <div class="company">OpenAI</div>
-                    </td>
-                    <td class="params-context">-</td>
-                    <td class="date">2024-05-13</td>
-                    <td class="data-cell">54.37</td>
- 
-                    <td class="data-cell">19.13</td>
- 
-
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="table-container" id="table2">
-        <table>
-            <thead>
-                <tr>
-                    <th rowspan="2">#</th>
-                    <th rowspan="2">Method</th>
-                    <th rowspan="2">Date</th>
-                    <th colspan="3">Easy (%)</th>
-                    <th colspan="3">Hard (%)</th>
-                </tr>
-                <tr>
-                    <th>Pass@1</th>
-                    <th>Calls</th>
-                    <th>Prices($)</th>
-                    <th>Pass@1</th>
-                    <th>Calls</th>
-                    <th>Prices($)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td class="model-info">
-                        <div class="model-name">Reflexion</div>
-                    </td>
-                    <td class="date">2023-10-10</td>
-                    <td class="data-cell">39.77</td>
-                    <td class="data-cell">2.12</td>
-                    <td class="data-cell">0.83</td>
-                    <td class="data-cell">13.32</td>
-                    <td class="data-cell">2.18</td>
-                    <td class="data-cell">1.35</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td class="model-info">
-                        <div class="model-name">Self Refine</div>
-                    </td>
-                    <td class="date">2023-05-26</td>
-                    <td class="data-cell">40.02</td>
-                    <td class="data-cell">5.00</td>
-                    <td class="data-cell">5.78</td>
-                    <td class="data-cell">20.03</td>
-                    <td class="data-cell">5.00</td>
-                    <td class="data-cell">5.8</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td class="model-info">
-                        <div class="model-name">Self Consistency</div>
-                    </td>
-                    <td class="date">2023-03-08</td>
-                    <td class="data-cell">37.62</td>
-                    <td class="data-cell">6.00</td>
-                    <td class="data-cell">4.30</td>
-                    <td class="data-cell">18.55</td>
-                    <td class="data-cell">6.00</td>
-                    <td class="data-cell">7.08</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td class="model-info">
-                        <div class="model-name">LLM Debate</div>
-                    </td>
-                    <td class="date">2023-05-24</td>
-                    <td class="data-cell">38.48 </td>
-                    <td class="data-cell">7.00</td>
-                    <td class="data-cell">5.95</td>
-                    <td class="data-cell">14.56</td>
-                    <td class="data-cell">7.00</td>
-                    <td class="data-cell">9.35</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td class="model-info">
-                        <div class="model-name">MAD</div>
-                    </td>
-                    <td class="date">2024-10-9</td>
-                    <td class="data-cell">31.50</td>
-                    <td class="data-cell">7.00</td>
-                    <td class="data-cell">2.48</td>
-                    <td class="data-cell">15.31</td>
-                    <td class="data-cell">7.00</td>
-                    <td class="data-cell">3.40</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td class="model-info">
-                        <div class="model-name">Agentverse</div>
-                    </td>
-                    <td class="date">2023-10-23</td>
-                    <td class="data-cell">38.67</td>
-                    <td class="data-cell">4.52</td>
-                    <td class="data-cell">1.40 </td>
-                    <td class="data-cell">13.42</td>
-                    <td class="data-cell">4.83 </td>
-                    <td class="data-cell">2.90</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td class="model-info">
-                        <div class="model-name">EvoMAC</div>
-                    </td>
-                    <td class="date">2024-10-22</td>
-                    <td class="data-cell">34.59</td>
-                    <td class="data-cell">7.98</td>
-                    <td class="data-cell">3.20</td>
-                    <td class="data-cell">13.60</td>
-                    <td class="data-cell">8.30</td>
-                    <td class="data-cell">4.65</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td class="model-info">
-                        <div class="model-name">MetaGPT</div>
-                    </td>
-                    <td class="date">2024-12-01</td>
-                    <td class="data-cell">29.56</td>
-                    <td class="data-cell">9.69</td>
-                    <td class="data-cell">2.20</td>
-                    <td class="data-cell">9.25</td>
-                    <td class="data-cell">10.37</td>
-                    <td class="data-cell">4.95</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td class="model-info">
-                        <div class="model-name">MapCoder</div>
-                    </td>
-                    <td class="date">2024-05-19</td>
-                    <td class="data-cell">24.55</td>
-                    <td class="data-cell">21.01</td>
-                    <td class="data-cell">6.05</td>
-                    <td class="data-cell">5.87</td>
-                    <td class="data-cell">23.41</td>
-                    <td class="data-cell">10.55</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td class="model-info">
-                        <div class="model-name">ChatDev</div>
-                    </td>
-                    <td class="date">2024-06-05</td>
-                    <td class="data-cell">35.13</td>
-                    <td class="data-cell">26.61</td>
-                    <td class="data-cell">3.53</td>
-                    <td class="data-cell">11.70</td>
-                    <td class="data-cell">30.87</td>
-                    <td class="data-cell">6.10</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-      </div>
-
-<section class="section">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-full_width">
-        <h2 class="title is-4">Comparison of Pass@3 scores for 17 chatbot and 10 reasoning LLMs on SWE-Dev</h2>
-        <img src="static/image/single_infer.png" class="center" style="width: 50%;"/>
-      </div>
-    </div>
-</section>      
-
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-full_width">
-        <hr>
-        <h2 class="title is-3">Training Support</h2>
-      </div>
-    </div>
-
-    <div class="columns is-centered has-text-centered">
-        <div class="column is-full-width">
-            <h2 class="title is-4">1️⃣ Single Agent Training</h2>
-            <p style="text-align: left;">We evaluate SWE-Dev's support for different training methods, including <strong style="font-size: 1.2em;">SFT</strong>, <strong style="font-size: 1.2em;">RL</strong>.</p>
-            
-            <!-- 使用 Flexbox 布局让图片并列 -->
-        <div style="display: flex; justify-content: space-around; align-items: center;">
-            <div>
-                <h3><strong style="font-size: 1.2em;">SFT</strong></h3>
-                <img src="static/image/single_sft.png" style="max-width: 90%; height: 200px;">
-            </div>
-            <div>
-                <h3><strong style="font-size: 1.2em;">RL</strong></h3>
-                <img src="static/image/single_rl.png" style="max-width: 90%; height: 200px;">
-            </div>
-        </div>
-        </div>
-    </div>
-
-    <div class="columns is-centered has-text-centered">
-    <div class="column is-full-width">
-        <h2 class="title is-4">2️⃣ MultiAgent Training</h2>
-        <p style="text-align: left;">MAS has shown promising results on SWE-Dev, and we further investigate the training process of MAS on this dataset. As depicted in Fig. 7, the ground truth test case supervision in SWE-Dev enables EvoMAC to improve its performance across multiple rounds of reasoning. This iterative refinement process motivates us to explore EvoMAC as the MAS for training in SWE-Dev. We apply rejection sampling to enhance agent performance via role-wise training.</p>
-        <br>
-        <img src="static/image/MultiAgent_Training.png" class="center" style="width: 90%;"/>
-    </div>
-    </div>
-
-    </div>
-</section>
-
-<section class="section">
   <div class="container is-max-desktop">
     <!-- Method. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-full_width">
         <hr>
-        <h2 class="title is-3">Dataset Construction</h2>
+        <h2 class="title is-3">Benchmark&nbsp;&nbsp;Construction</h2>
         <br>
-        <img src="static/image/data_construction.jpg" class="center" style="width: 90%;"/>
+        <img src="static\images\bench.png" class="center" style="width: 90%;"/>
         <br>
-        <img src="static/image/dataset_Statistics.png" class="center" style="width: 90%;"/>        
+        <div class="content has-text-justified">
+          <br>  
+          <p>
+            rSDE-Bench involves diverse requirements, each paired with a test case. Specifically, rSDE-Bench provides <b>53 unique coding tasks</b> and <b>616 test cases</b>. 
+              It is divided into two typical real-world software types: <b>game and website</b>, and introduces two requirement difficulty levels, including <b>basic and advanced</b>, to reflect the
+              varying complexity of real-world software development tasks.
+          </p>
+        </div>
       </div>
     </div>
-    </div>
     <hr>
+
+    
+    <!-- Applications.-->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full_width">
+        <h2 class="title is-3">Features</h2>
+      </div>
+    </div>
+    
+    <div class="content has-text-justified">
+        <br>  
+        <p>
+          <span style="color:#0ea7ff;"><b>Challenging and diverse software requirements.</b></span> rSDE-Bench features long-context software
+          requirements (averaging 507/1011 words for game and website tasks, respectively), unlike instructionoriented benchmarks that rely on brief prompts. These detailed requirements better reflect
+          real-world lengthy and complex software development challenges.
+        </p>
+        <p>
+          <span style="color:#0ea7ff;"><b>Requirement-aware precise and efficient evaluation.</b></span> rSDE-Bench employs detailed software
+          requirements and automated unit tests to precisely measure how well generated software meets
+          its objectives. Generated codes are evaluated based on pass rates from running specific test cases,
+          offering an accurate and efficient process. In contrast, instruction-oriented benchmarks rely on brief
+          prompts, which lack constraints and make evaluation less reliable, often requiring labor-intensive or
+          indirect evaluation.
+        </p>
+      </div>
+    </div>
+</div>
 </section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full_width">
+        <hr>
+        <h2 class="title is-3">Leaderboard</h2>
+      </div>
+    </div>
+    <div class="content-box">
+      <ul class="tab">
+        <li><button id="tab-website" class="tablinks active" data-leaderboard="website">Website</button></li>
+        <li><button id="tab-game" class="tablinks" data-leaderboard="game">Game</button></li>
+      </ul>
+      
+      <div class="tabcontent" style="display: none;" id="leaderboard-game">
+        <table class="table scrollable">
+          <thead>
+            <tr>
+              <th><div class="sticky-header-content">Model</div></th>
+              <th><div class="sticky-header-content">% Basic</div></th>
+              <th><div class="sticky-header-content">% Advanced</div></th>
+              <th><div class="sticky-header-content">Codes</div></th>
+              <th><div class="sticky-header-content">Results</div></th>
+              <th><div class="sticky-header-content">Site</div></th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td>
+                <p class="model-type">
+                  🥇✅
+                  
+                  
+                  
+                  EvoMAC
+                </p>
+              </td>
+              <td><p class="number">77.54</p></td>
+              <td><p class="number">51.60</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/game/EvoMAC">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/game/EvoMAC">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p class="model-type">
+                  🥈✅
+                  
+                  
+                  
+                  ChatDev
+                </p>
+              </td>
+              <td><p class="number">53.63</p></td>
+              <td><p class="number">32.26</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/game/ChatDev">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/game/ChatDev">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p class="model-type">
+                  🥉
+                  
+                  
+                  
+                  GPT-4o-Mini
+                </p>
+              </td>
+              <td><p class="number">42.76</p></td>
+              <td><p class="number">30.10</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/game/gpt-4o-mini">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/game/gpt-4o-mini">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p class="model-type">
+                  Claude-3.5-Sonnet
+                </p>
+              </td>
+              <td><p class="number">44.20</p></td>
+              <td><p class="number">18.29</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/website/claude-3.5-sonnet">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/website/claude-3.5-sonnet">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p class="model-type">
+                  ✅
+                  Agentverse
+                </p>
+              </td>
+              <td><p class="number">37.67</p></td>
+              <td><p class="number">16.13</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/game/agentverse">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/game/agentverse">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p class="model-type">
+                  ✅
+                  MapCoder
+                </p>
+              </td>
+              <td><p class="number">29.71</p></td>
+              <td><p class="number">7.52</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/game/mapcoder">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/game/mapcoder">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p class="model-type">
+                  Gemini-1.5-Flash
+                </p>
+              </td>
+              <td><p class="number">21.74</p></td>
+              <td><p class="number">6.45</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/game/gemini-1.5-flash">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/game/gemini-1.5-flash">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p class="model-type">
+                  ✅
+                  Autogen
+                </p>
+              </td>
+              <td><p class="number">17.39</p></td>
+              <td><p class="number">0.00</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/game/autogen">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/game/autogen">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p class="model-type">
+                  ✅
+                  MetaGPT
+                </p>
+              </td>
+              <td><p class="number">16.67</p></td>
+              <td><p class="number">0.00</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/game/metagpt">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/game/metagpt">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
+            
+            
+            
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="tabcontent" style="display: block;" id="leaderboard-website">
+        <table class="table scrollable">
+          <thead>
+            <tr>
+              <th><div class="sticky-header-content">Model</div></th>
+              <th><div class="sticky-header-content">% Basic</div></th>
+              <th><div class="sticky-header-content">% Advanced</div></th>
+              <th><div class="sticky-header-content">Codes</div></th>
+              <th><div class="sticky-header-content">Results</div></th>
+              <th><div class="sticky-header-content">Site</div></th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td>
+                <p class="model-type">
+                  🥇✅
+                  
+                  
+                  
+                  EvoMAC
+                </p>
+              </td>
+              <td><p class="number">89.38</p></td>
+              <td><p class="number">65.05</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/website/EvoMAC">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/website/EvoMAC">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p class="model-type">
+                  🥈
+                  
+                  
+                  
+                  GPT-4o-Mini
+                </p>
+              </td>
+              <td><p class="number">62.90</p></td>
+              <td><p class="number">44.40</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/website/gpt-4o-mini">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/website/gpt-4o-mini">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p class="model-type">
+                  🥉✅
+                  
+                  
+                  
+                  ChatDev
+                </p>
+              </td>
+              <td><p class="number">62.67</p></td>
+              <td><p class="number">43.45</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/website/ChatDev">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/website/ChatDev">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p class="model-type">
+                  Claude-3.5-Sonnet
+                </p>
+              </td>
+              <td><p class="number">58.90</p></td>
+              <td><p class="number">37.11</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/website/claude-3.5-sonnet">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/website/claude-3.5-sonnet">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p class="model-type">
+                  ✅
+                  MapCoder
+                </p>
+              </td>
+              <td><p class="number">34.70</p></td>
+              <td><p class="number">14.57</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/website/mapcoder">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/website/mapcoder">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p class="model-type">
+                  Gemini-1.5-Flash
+                </p>
+              </td>
+              <td><p class="number">29.79</p></td>
+              <td><p class="number">11.61</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/website/gemini-1.5-flash">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/website/gemini-1.5-flash">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p class="model-type">
+                  ✅
+                  Autogen
+                </p>
+              </td>
+              <td><p class="number">25.68</p></td>
+              <td><p class="number">5.40</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/website/autogen">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/website/autogen">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p class="model-type">
+                  ✅
+                  Agentverse
+                </p>
+              </td>
+              <td><p class="number">15.41</p></td>
+              <td><p class="number">0.00</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/website/agentverse">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/website/agentverse">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p class="model-type">
+                  ✅
+                  MetaGPT
+                </p>
+              </td>
+              <td><p class="number">15.41</p></td>
+              <td><p class="number">0.00</p></td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/codes/website/metagpt">🔗</a>
+                  
+                  </p>
+              </td>
+              <td>
+                <p style="text-align: center;">
+                
+                    <a href="https://github.com/yuzhu-cai/rSDE-Bench/tree/main/results/website/metagpt">🔗</a>
+                
+                </p>
+            </td>
+              <td>
+                  <p style="text-align: center;">
+                  
+                      <a href="https://github.com/yuzhu-cai/rSDE-Bench">🔗</a>
+                  
+                  </p>
+              </td>
+            </tr>
+          
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full_width">
+        <div class="content has-text-justified">
+          <br>
+          <p>
+            rSDE-Bench involves two typical real-world software types: website and game, which can reflect
+            different coding capacities demanded in realistic software development. 
+            <br>
+            <span style="color:#0ea7ff;"><b>Website</b></span> emphasizes static and dynamic
+            content management, user interaction through forms and buttons, and ensuring page elements are
+            displayed and functional.
+            <br>
+            <span style="color:#0ea7ff;"><b>Game</b></span> requires handling
+            dynamic interactions, and real-time state changes, focusing on elements like
+            logic execution, initialization, and game state transitions. 
+            <br><br>
+
+            rSDE-Bench introduces two requirement difficulty levels, including <b>basic</b> and <b>advanced</b>.
+            <br>
+            - The <span style="color:#0ea7ff;"><b>% Basic</b></span> metric refers to the percentage of rSDE-Bench basic test cases
+            that were <i>passed</i> by the model.
+            <br>
+            - The <span style="color:#0ea7ff;"><b>% Advanced</b></span> metric refers to the percentage of rSDE-Bench advanced test cases
+            that were <i>passed</i> by the model.
+            <br>
+            - <span style="color:#0ea7ff;"><b>✅ Checked</b></span> indicates that the model system operates as a multi-agent system, while the absence of ✅ Checked denotes a single-agent system.
+          </p>
+        </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<hr>
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
-    <hr>
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{du2025swe,
-  title={SWE-Dev: Evaluating and Training Autonomous Feature-Driven Software Development},
-  author={Du, Yaxin and Cai, Yuzhu and Zhou, Yifan and Wang, Cheng and Qian, Yu and Pang, Xianghe and Liu, Qian and Hu, Yue and Chen, Siheng},
-  journal={arXiv preprint arXiv:2505.16975},
-  year={2025}
+    <pre><code>@misc{hu2024selfevolvingmultiagentcollaborationnetworks,
+      title={Self-Evolving Multi-Agent Collaboration Networks for Software Development}, 
+      author={Yue Hu and Yuzhu Cai and Yaxin Du and Xinyu Zhu and Xiangrui Liu and Zijie Yu and Yuchen Hou and Shuo Tang and Siheng Chen},
+      year={2024},
+      eprint={2410.16946},
+      archivePrefix={arXiv},
+      primaryClass={cs.SE},
+      url={https://arxiv.org/abs/2410.16946}, 
 }</code></pre>
   </div>
-  <hr>
 </section>
 
 
@@ -1091,19 +1013,21 @@
 </body>
 </html>
 <script>
-    function switchTable(tableId) {
-        // 移除所有按钮的active类并添加新active按钮
-        document.querySelectorAll('.switch-button').forEach(button => {
-            button.classList.remove('active');
-        });
-        document.querySelector(`.switch-button[onclick="switchTable('${tableId}')"]`).classList.add('active');
-        
-        // 隐藏所有表格并显示选中的表格
-        document.querySelectorAll('.table-container').forEach(container => {
-            container.classList.remove('active');
-        });
-        document.getElementById(tableId).classList.add('active');
+  function openLeaderboard(leaderboard) {
+    var tabcontent = document.getElementsByClassName("tabcontent");
+    for (var i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
     }
+
+    var tablinks = document.getElementsByClassName("tablinks");
+    for (var i = 0; i < tablinks.length; i++) {
+      tablinks[i].classList.remove("active");
+    }
+
+    document.getElementById(`leaderboard-${leaderboard}`).style.display = "block";
+    document.querySelector(`[data-leaderboard="${leaderboard}"]`).classList.add("active");
+  }
+
   document.addEventListener('DOMContentLoaded', function() {
     var tabs = document.querySelectorAll('.tablinks');
     tabs.forEach(function(tab) {
