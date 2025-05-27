@@ -194,6 +194,7 @@
             user-select: none;
             position: relative;
             transition: background-color 0.2s;
+            padding-right: 25px !important; /* 为排序图标预留空间 */
         }
 
         .sortable:hover {
@@ -203,9 +204,14 @@
         .sortable::after {
             content: '↕️';
             position: absolute;
-            right: 8px;
+            right: 6px;
+            top: 50%;
+            transform: translateY(-50%); /* 垂直居中 */
             opacity: 0.5;
-            font-size: 12px;
+            font-size: 11px;
+            line-height: 1;
+            width: 12px;
+            text-align: center;
         }
 
         .sortable.asc::after {
@@ -951,7 +957,7 @@
                     <td class="model-info">
                         <div class="model-name">MAD</div>
                     </td>
-                    <td class="date">2024-10-9</td>
+                    <td class="date">2024-10-09</td>
                     <td class="data-cell" data-value="31.50">31.50</td>
                     <td class="data-cell" data-value="7.00">7.00</td>
                     <td class="data-cell" data-value="2.48">2.48</td>
