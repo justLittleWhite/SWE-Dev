@@ -39,7 +39,7 @@
             background-color: #e0e0e0;
             border-radius: 5px;
             overflow: hidden;
-            width: 70%;
+            width: 100%;
             margin-left: auto;
             margin-right: auto;
         }
@@ -311,7 +311,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <p>Large Language Models (LLMs) have shown strong capability in diverse software engineering tasks, e.g. code completion, bug fixing, and document generation. However, feature-driven development (FDD), a highly prevalent real-world task that involves developing new functionalities for large, existing codebases, remains underexplored. We therefore introduce SWE-Dev, the first large-scale dataset (with 14,000 training and 500 test samples) designed to evaluate and train autonomous coding systems on real-world feature development tasks. To ensure verifiable and diverse training, SWE-Dev uniquely provides all instances with a runnable environment and its developer-authored executable unit tests. This collection not only provides high-quality data for Supervised Fine-Tuning (SFT), but also enables Reinforcement Learning (RL) by delivering accurate reward signals from executable unit tests. Our extensive evaluations on SWE-Dev, covering 17 chatbot LLMs, 10 reasoning models, and 10 Multi-Agent Systems (MAS), reveal that FDD is a profoundly challenging frontier for current AI (e.g., Claude-3.7-Sonnet achieves only 22.45% Pass@3 on the hard test split). Crucially, we demonstrate that SWE-Dev serves as an effective platform for model improvement: fine-tuning on training set enabled a 7B model comparable to GPT-4o on hard split, underscoring the value of its high-quality training data.
+          <p>Large Language Models (LLMs) have shown strong capability in diverse software engineering tasks, e.g. code completion, bug fixing, and document generation. However, feature-driven development (FDD), a highly prevalent real-world task that involves developing new functionalities for large, existing codebases, remains underexplored. We therefore introduce SWE-Dev, the first large-scale dataset (<strong>with 14,000 training and 500 test samples</strong>) designed to evaluate and train autonomous coding systems on real-world feature development tasks. To ensure verifiable and diverse training, SWE-Dev uniquely provides all instances with a runnable environment and its developer-authored executable unit tests. This collection not only provides high-quality data for Supervised Fine-Tuning (SFT), but also enables Reinforcement Learning (RL) by delivering accurate reward signals from executable unit tests. Our extensive evaluations on SWE-Dev, covering 17 chatbot LLMs, 10 reasoning models, and 10 Multi-Agent Systems (MAS), reveal that FDD is a profoundly challenging frontier for current AI (e.g., Claude-3.7-Sonnet achieves only 22.45% Pass@3 on the hard test split). Crucially, we demonstrate that SWE-Dev serves as an effective platform for model improvement: fine-tuning on training set enabled a 7B model comparable to GPT-4o on hard split, underscoring the value of its high-quality training data.
             Read more about SWE-Dev in our <a href="https://arxiv.org/pdf/2505.16975" ,="" target="_blank">paper</a>!</p>
         </div>
       </div>
@@ -340,7 +340,7 @@
             <span class="feature-number" style="color: rgb(0, 153, 255); font-weight: bold;">1 Realistic scale and complexity</span>
         </div>
         <div class="feature-content">
-            SWE-Dev requires substantial code modifications (avg. <strong>190 LOC across 3 files</strong>), challenging models with the cross-file dependencies, large contexts, and significant implementation scope characteristic of real-world feature development.
+            SWE-Dev requires substantial code modifications (<strong>avg. 190 LOC across 3 files</strong>), challenging models with the cross-file dependencies, large contexts, and significant implementation scope characteristic of real-world feature development.
         </div>
     </div>
     
@@ -989,8 +989,32 @@
 <section class="section">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full_width">
-        <h2 class="title is-4">Comparison of Pass@3 scores for 17 chatbot and 10 reasoning LLMs on SWE-Dev</h2>
         <img src="static/image/single_infer.png" class="center" style="width: 50%;"/>
+         <p> We have compared the Pass@3 scores for 17 chatbot LLMs and 10 reasoning LLMs on SWE-Dev.</p>
+        <div class="feature" style="max-width: 60%;margin: auto">
+            <div class="feature-title">
+                <span class="feature-number" style="color: rgb(0, 153, 255); font-weight: bold;">1 SWE-Dev Poses High Challenge</span>
+            </div>
+            <div class="feature-content">
+                SWE-Dev presents substantial challenges for current LLMs, with even the best-performing Claude-3.7-Sonnet achieving only 22.45% Pass@3 on the Hard split, revealing a clear gap between existing AI coding capabilities and real-world software engineering demands.
+            </div>
+        </div>
+        <div class="feature" style="max-width: 60%;margin: auto">
+            <div class="feature-title">
+                <span class="feature-number" style="color: rgb(0, 153, 255); font-weight: bold;">2 Model Performance Patterns</span>
+            </div>
+            <div class="feature-content">
+                All LLMs perform better on the Easy split than the Hard split, and performance generally scales with model size within the same family, demonstrating that SWE-Dev can effectively distinguish different model capabilities and aligns with our understanding of LLM capability scaling.
+            </div>
+        </div>
+        <div class="feature" style="max-width: 60%;margin: auto">
+            <div class="feature-title">
+                <span class="feature-number" style="color: rgb(0, 153, 255); font-weight: bold;">3 Reasoning Model Performance</span>
+            </div>
+            <div class="feature-content">
+                Reasoning models generally underperform their corresponding base chatbot models, with Claude-3.7-Sonnet being the exception, indicating that current reasoning strategies do not consistently translate into gains for complex, repository-level generation tasks.
+            </div>
+        </div>
       </div>
     </div>
 </section>      
