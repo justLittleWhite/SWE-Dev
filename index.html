@@ -991,7 +991,7 @@
       <div class="column is-full_width">
         <img src="static/image/single_infer.png" class="center" style="width: 50%; display: block; margin: 0 auto;"/>
         <br>
-         We have compared the Pass@3 scores for 17 chatbot LLMs and 10 reasoning LLMs on SWE-Dev.
+         <p style="text-align: left;">We have compared the Pass@3 scores for 17 chatbot LLMs and 10 reasoning LLMs on SWE-Dev.</p>
         <div class="feature" style="max-width: 60%; margin: auto; text-align: left;">
             <div class="feature-title">
                 <span class="feature-number" style="color: rgb(0, 153, 255); font-weight: bold;">1 SWE-Dev Poses High Challenge</span>
@@ -1034,7 +1034,7 @@
     <div class="columns is-centered has-text-centered">
         <div class="column is-full-width">
             <h2 class="title is-4">1️⃣ Single Agent Training</h2>
-            <p style="text-align: left;">We evaluate SWE-Dev's support for different training methods, including <strong style="font-size: 1.2em;">SFT</strong>, <strong style="font-size: 1.2em;">RL</strong>.</p>
+
             
             <!-- 使用 Flexbox 布局让图片并列 -->
         <div style="display: flex; justify-content: space-around; align-items: center;">
@@ -1047,15 +1047,16 @@
                 <img src="static/image/single_rl.png" style="max-width: 100%; height: 200px;">
             </div>
         </div>
+        <p style="text-align: left;">We evaluate SWE-Dev's support for different training methods, including <strong style="font-size: 1.2em;">SFT</strong>, <strong style="font-size: 1.2em;">RL</strong>.</p>
         </div>
     </div>
 
     <div class="columns is-centered has-text-centered">
     <div class="column is-full-width">
         <h2 class="title is-4">2️⃣ MultiAgent Training</h2>
+        <img src="static/image/MultiAgent_Training.png" class="center" style="width: 90%;"/>
         <p style="text-align: left;">MAS has shown promising results on SWE-Dev, and we further investigate the training process of MAS on this dataset. As depicted in Fig. 7, the ground truth test case supervision in SWE-Dev enables EvoMAC to improve its performance across multiple rounds of reasoning. This iterative refinement process motivates us to explore EvoMAC as the MAS for training in SWE-Dev. We apply rejection sampling to enhance agent performance via role-wise training.</p>
         <br>
-        <img src="static/image/MultiAgent_Training.png" class="center" style="width: 90%;"/>
     </div>
     </div>
 
@@ -1072,8 +1073,12 @@
         <h2 class="title is-3">Dataset Construction</h2>
         <br>
         <img src="static/image/data_construction.jpg" class="center" style="width: 90%;"/>
+        <p style="text-align: left;"> <span style="font-weight: bold; color: rgb(0, 153, 255);">Step 1:</span> We collect real-world repositories with passing test files in Dockerized environments</p>
+        <p style="text-align: left;">font-weight: bold; color: rgb(0, 153, 255);">Step 2: trace test executions to construct function-level call trees linking test cases to invoked source code</p>
+        <p style="text-align: left;">font-weight: bold; color: rgb(0, 153, 255);">Step 3: mask core functions while generating refined PRDs to create tasks. Each sample includes an incomplete repository, a natural language requirement, and executable test cases-enabling realistic, verifiable feature development.</p>
         <br>
-        <img src="static/image/dataset_Statistics.png" class="center" style="width: 90%;"/>        
+        <img src="static/image/dataset_Statistics.png" class="center" style="width: 90%;"/>    
+        <p style="text-align: left;">SWE-Dev consists of 14,000 training samples and 500 test samples derived from over 1,000 open-source projects, with the test set manually curated and split into easy (250 instances) and hard (250 instances) difficulty levels. The dataset demonstrates substantial scale and complexity, with each sample requiring an average of 190 lines of code across 3 files and involving approximately 6 target functions for implementation. The average Project Requirement Document (PRD) contains 1,845 tokens, and each sample includes around 6 unit tests for functional evaluation, spanning diverse application domains including web & network automation, data processing & integration, security & access control, command-line & developer tools, cloud & data storage, and data science & visualization. This distribution across major PyPI application domains ensures comprehensive coverage of real-world software development scenarios, making SWE-Dev a robust benchmark for evaluating autonomous coding systems on realistic feature-driven development tasks.  </p>  
       </div>
     </div>
     </div>
